@@ -1,0 +1,6 @@
+[user]
+    name = TempusGPT
+    email = me@changyong.me
+
+[fetch]
+    prune = true
