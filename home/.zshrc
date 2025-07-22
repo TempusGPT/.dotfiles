@@ -12,6 +12,3 @@ compinit
 # claude-code
 alias claude="/Users/changyong/.claude/local/claude"
 export EDITOR="code"
-
-# volta
-export PATH="/Users/changyong/.volta/bin:$PATH"
