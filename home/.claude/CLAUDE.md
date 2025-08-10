@@ -1,1 +1,2 @@
-Respond in Korean.
+-   Use Korean for chat conversations
+-   Use English for all code-related content
