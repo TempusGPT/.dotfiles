@@ -19,12 +19,20 @@ Create comprehensive specifications for software projects including requirements
         - Integration requirements
         - Timeline and priority
 
-3. **Specification Generation**
+3. **Requirements Document Generation**
+
     - Create `.claude/specs/YYMMDD-slug/` directory structure
-    - Generate three core documents:
-        - `requirements.md` (Product Requirements Document - PRD)
-        - `design.md` (Technical Requirements Document - TRD)
-        - `tasks.md` (Task breakdown and implementation plan)
+    - Generate `requirements.md` (Product Requirements Document - PRD)
+    - **Wait for user review and approval before proceeding**
+
+4. **Design Document Generation**
+
+    - Generate `design.md` (Technical Requirements Document - TRD)
+    - **Wait for user review and approval before proceeding**
+
+5. **Task Breakdown Generation**
+    - Generate `tasks.md` (Task breakdown and implementation plan)
+    - **Present final task list for user confirmation**
 
 ## Output Structure
 
