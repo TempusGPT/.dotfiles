@@ -4,41 +4,51 @@ Implement a single task from the specification with complete testing and validat
 
 ## Process
 
-1. **Task Analysis**
+1. **Specification Review**
 
-    - Parse and understand the implementation requirements
-    - Identify the specific task to implement
-    - Locate relevant tasks.md file if available
+    - Search for specification documents in `.claude/specs/` directory
+    - Look for the most recent or relevant spec folder (YYMMDD-slug format)
+    - Read requirements.md for project context and objectives
+    - Review design.md for architecture and technical specifications
+    - Find and analyze tasks.md to identify the specific task to implement
+    - Understand task dependencies and prerequisites
 
-2. **Codebase Exploration**
+2. **Task Analysis**
+
+    - Parse and understand the specific task requirements
+    - Identify scope, acceptance criteria, and deliverables
+    - Review any subtasks or related dependencies
+    - Clarify implementation approach based on design specifications
+
+3. **Codebase Exploration**
 
     - Analyze existing codebase structure and patterns
     - Identify relevant files, components, and dependencies
     - Understand current architecture and conventions
     - Review similar implementations for consistency
 
-3. **Test-Driven Implementation**
+4. **Test-Driven Implementation**
 
     - Write comprehensive tests first (TDD approach)
     - Implement the feature/fix to pass all tests
     - Ensure edge cases and error scenarios are covered
     - Follow existing testing patterns and frameworks
 
-4. **Code Implementation**
+5. **Code Implementation**
 
     - Follow existing code style and conventions
     - Implement minimal viable solution that meets requirements
     - Add proper error handling and validation
     - Include necessary documentation and comments
 
-5. **Validation & Quality Assurance**
+6. **Validation & Quality Assurance**
 
     - Run all tests to ensure they pass
     - Execute lint and typecheck commands
     - Verify no regressions in existing functionality
     - Check integration with existing systems
 
-6. **Task Completion**
+7. **Task Completion**
     - Update task status to "completed" in tasks.md (if applicable)
     - Summarize what was implemented
     - Note any deviations from original specification
