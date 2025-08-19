@@ -20,7 +20,7 @@ Personal configuration files backup.
 git clone https://github.com/TempusGPT/.dotfiles ~/.dotfiles
 
 # Create necessary directories
-mkdir -p ~/.claude ~/.config/git ~/.config/karabiner/assets
+mkdir -p ~/.claude ~/.config/karabiner/assets
 
 # Create all symlinks
 ln -s ~/.dotfiles/home/.claude/commands ~/.claude/commands
