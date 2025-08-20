@@ -12,7 +12,9 @@ Create comprehensive specifications for software projects including requirements
 
 2. **Requirements Gathering**
 
-    - Ask clarifying questions about:
+    - Ask clarifying questions one at a time based on what's unclear from the initial request
+    - Wait for each response before asking the next question
+    - Common areas to clarify (ask only what's needed):
         - Target users and use cases
         - Technical constraints and requirements
         - Performance and scalability needs
