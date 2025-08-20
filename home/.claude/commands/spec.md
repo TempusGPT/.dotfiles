@@ -52,7 +52,7 @@ Create comprehensive specifications for software projects including requirements
 
 ### tasks.md (Task Breakdown)
 
--   Jira-ticket-sized tasks (each task = one test + code review cycle)
+-   Appropriately-sized tasks (avoid over-splitting small tasks)
 -   Task hierarchy with subtasks when needed
 -   Dependencies and execution order
 -   Effort estimates and priorities
