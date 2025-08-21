@@ -70,6 +70,7 @@ After TRD approval, create a task breakdown at `.claude/spec/YYMMDD-slug/tasks.m
 -   **Flexibility**: The process can be adapted based on the complexity and nature of the user story
 -   **Testing Strategy**: Testing methods will be determined during the implementation phase based on the specific requirements of each task
 -   **Iterative Process**: Each stage requires user approval before proceeding to ensure alignment
+-   **Ask Questions One at a Time**: During requirements gathering, ask clarifying questions one at a time rather than multiple questions together to avoid overwhelming the user
 -   **Documentation Path**: All specifications will be saved in `.claude/spec/YYMMDD-slug/` where:
     -   `YYMMDD` is the current date
     -   `slug` is a URL-friendly version of the user story title
