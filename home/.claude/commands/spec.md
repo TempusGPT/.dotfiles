@@ -1,6 +1,6 @@
 # Create comprehensive specifications from user stories
 
-Generate Product Requirements Document (PRD), Technical Requirements Document (TRD), and task breakdown for a user story: $ARGUMENTS
+Ultrathink to generate Product Requirements Document (PRD), Technical Requirements Document (TRD), and task breakdown for a user story: $ARGUMENTS
 
 ## Command Flow
 
