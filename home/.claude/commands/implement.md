@@ -20,9 +20,17 @@ Select the task to implement from `tasks.md`:
 -   **If task name/number provided in arguments**: Select the matching task
 -   **If no task specified**: Display all tasks from the spec's `tasks.md` with their status and ask user to select one
 
-### 3. Test-Driven Development
+### 3. Review Specifications
 
-Before implementation, write comprehensive tests for the selected task:
+Before starting implementation, thoroughly review the specification documents:
+
+-   **Requirements Document**: Read `requirements.md` to understand user needs and functional requirements
+-   **Design Document**: Read `design.md` to understand technical approach and architecture decisions
+-   **Context Understanding**: Ensure complete understanding of how the task fits into the overall system
+
+### 4. Test-Driven Development
+
+After understanding requirements and design, write comprehensive tests for the selected task:
 
 -   **Unit Tests**: For individual functions and components
 -   **Integration Tests**: For component interactions
@@ -31,7 +39,7 @@ Before implementation, write comprehensive tests for the selected task:
 
 Run tests to ensure they fail appropriately before implementation.
 
-### 4. Implementation
+### 5. Implementation
 
 Implement only the selected task:
 
@@ -40,7 +48,7 @@ Implement only the selected task:
 -   **Single Task Focus**: Complete only the selected task, not other tasks
 -   **Incremental Testing**: Run tests frequently during implementation
 
-### 5. Verification
+### 6. Verification
 
 After implementation:
 
