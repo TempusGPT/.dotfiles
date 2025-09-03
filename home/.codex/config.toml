@@ -1,6 +1,0 @@
-model_reasoning_effort = "high"
-model_verbosity = "high"
-
-[mcp_servers.context7]
-args = ["-y", "@upstash/context7-mcp"]
-command = "npx"
