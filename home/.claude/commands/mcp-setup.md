@@ -1,12 +1,27 @@
 ---
-description: Install MCP servers
-allowed-tools: Bash(claude mcp add:*)
+allowed-tools: Bash(claude mcp:*)
 ---
 
-Run installation commands:
+# Install MCP servers
 
-```bash
-claude mcp add codex --scope user -- codex mcp -c model_reasoning_effort="high"
-claude mcp add context7 --scope user -- npx -y @upstash/context7-mcp
-claude mcp add playwright --scope user -- npx @playwright/mcp@latest
-```
+Install and configure MCP servers for Claude Code.
+
+## Command Flow
+
+1. Check currently installed MCP servers: `claude mcp list`
+2. Install universal servers if not already installed
+3. Ask user which project-specific servers they want to install
+4. For servers requiring credentials, prompt for necessary tokens/keys
+5. Install selected project-specific servers with provided credentials
+
+## MCP servers
+
+### Universal
+
+-   **Codex**: `claude mcp add codex -s user -- codex mcp -c model_reasoning_effort="high"`
+-   **Context7**: `claude mcp add context7 -s user -- npx -y @upstash/context7-mcp`
+
+### Project-Specific
+
+-   **Playwright**: `claude mcp add playwright npx @playwright/mcp@latest`
+-   **Supabase**: `claude mcp add supabase -e SUPABASE_ACCESS_TOKEN=your_token_here -- npx -y @supabase/mcp-server-supabase@latest`
