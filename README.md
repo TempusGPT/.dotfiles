@@ -8,6 +8,7 @@ Personal configuration files backup.
     -   `.claude/`
         -   `commands/` - Claude Code custom commands
         -   `CLAUDE.md` - Claude Code instructions
+        -   `settings.json` - Claude Code settings
     -   `.config/`
         -   `karabiner/assets/complex_modifications/` - Keyboard customizations
     -   `.gitconfig` - Git configuration
@@ -25,6 +26,7 @@ mkdir -p ~/.claude ~/.config/karabiner/assets
 # Create all symlinks
 ln -s ~/.dotfiles/home/.claude/commands ~/.claude/commands
 ln -s ~/.dotfiles/home/.claude/CLAUDE.md ~/.claude/CLAUDE.md
+ln -s ~/.dotfiles/home/.claude/settings.json ~/.claude/settings.json
 ln -s ~/.dotfiles/home/.config/karabiner/assets/complex_modifications ~/.config/karabiner/assets/complex_modifications
 ln -s ~/.dotfiles/home/.gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/home/.zshrc ~/.zshrc
