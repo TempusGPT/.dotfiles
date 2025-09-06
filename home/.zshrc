@@ -13,5 +13,5 @@ compinit
 alias claude="/Users/changyong/.claude/local/claude"
 export EDITOR="code"
 
-# volta
-export PATH="/Users/changyong/.volta/bin:$PATH"
+# fnm
+eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
