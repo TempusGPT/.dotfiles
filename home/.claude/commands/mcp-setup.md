@@ -18,7 +18,7 @@ Install and configure MCP servers for Claude Code.
 
 ### Universal
 
--   **Codex**: `claude mcp add codex -s user -- codex mcp -c model_reasoning_effort="high"`
+-   **Codex**: `claude mcp add codex -s user -- codex mcp -c model_reasoning_effort=high -c tools.web_search=true`
 -   **Context7**: `claude mcp add context7 -s user -- npx -y @upstash/context7-mcp`
 
 ### Project-Specific
