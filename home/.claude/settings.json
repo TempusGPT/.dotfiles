@@ -1,6 +1,30 @@
 {
-    "model": "opus",
     "env": {
         "MAX_THINKING_TOKENS": "31999"
+    },
+    "model": "opus",
+    "hooks": {
+        "Stop": [
+            {
+                "matcher": "",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "terminal-notifier -title 'Claude Code' -message 'Task completed successfully' -sound default -sender com.microsoft.VSCode"
+                    }
+                ]
+            }
+        ],
+        "Notification": [
+            {
+                "matcher": "",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "terminal-notifier -title 'Claude Code' -message 'Awaiting your confirmation' -sound default -sender com.microsoft.VSCode"
+                    }
+                ]
+            }
+        ]
     }
 }
