@@ -2,6 +2,7 @@ brew "codex"
 brew "deno"
 brew "fnm"
 brew "gh"
+brew "mas"
 brew "terminal-notifier"
 brew "uv"
 cask "alt-tab"
@@ -11,6 +12,11 @@ cask "discord"
 cask "docker-desktop"
 cask "dotnet-sdk"
 cask "google-chrome"
+cask "jordanbaird-ice"
 cask "karabiner-elements"
 cask "unity-hub"
 cask "visual-studio-code"
+mas "AdGuard for Safari", id: 1440147259
+mas "Color Picker", id: 1545870783
+mas "Final Cut Pro", id: 424389933
+mas "Pixelmator Pro", id: 1289583905
