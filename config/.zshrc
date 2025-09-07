@@ -10,3 +10,6 @@ compinit
 
 # fnm
 eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
+
+# claude
+export PATH="$HOME/.local/bin:$PATH"
