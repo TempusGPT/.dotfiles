@@ -22,5 +22,6 @@ defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool "false"
 defaults write com.apple.HIToolbox AppleFnUsageType -int "0"
 defaults write NSGlobalDomain AppleKeyboardUIMode -int "2"
 
+# Apply
 killall Dock
 killall Finder
