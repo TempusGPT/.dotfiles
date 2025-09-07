@@ -9,9 +9,9 @@ Personal configuration files for macOS development environment.
 -   Editor configs (Claude Code, VS Code)
 -   System utilities (Karabiner, Alt-Tab)
 
-## Installation
+## Bootstrap
 
 ```bash
 git clone https://github.com/TempusGPT/.dotfiles ~/.dotfiles
-~/.dotfiles/install.sh
+~/.dotfiles/bootstrap.sh
 ```
