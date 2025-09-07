@@ -1,5 +1,5 @@
 mkdir -p ~/.claude
-mkdir -p ~/.config/karabiner/assets
+mkdir -p ~/.config/karabiner/assets/complex_modifications
 
 ln -sf ~/.dotfiles/config/.claude/commands ~/.claude/commands
 ln -sf ~/.dotfiles/config/.claude/CLAUDE.md ~/.claude/CLAUDE.md

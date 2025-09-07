@@ -1,8 +1,6 @@
 #!/bin/bash
 
-cd "$(dirname "$0")"
-source src/oh-my-zsh.sh
-source src/homebrew.sh
-source src/config.sh
-
-echo "Installation complete!"
+cd "$(dirname $0)"/src
+source oh-my-zsh.sh
+source homebrew.sh
+source config.sh
