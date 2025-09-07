@@ -9,9 +9,5 @@ fpath=(/Users/changyong/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 
-# claude-code
-alias claude="/Users/changyong/.claude/local/claude"
-export EDITOR="code"
-
 # fnm
 eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
