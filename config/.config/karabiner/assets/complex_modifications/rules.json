@@ -32,8 +32,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -50,8 +49,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -68,8 +66,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -86,8 +83,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -109,8 +105,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -128,8 +123,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -147,8 +141,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -166,8 +159,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -190,8 +182,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -208,8 +199,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -231,8 +221,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -254,8 +243,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -273,8 +261,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -297,8 +284,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -315,8 +301,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -339,8 +324,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -357,8 +341,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -381,8 +364,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -400,8 +382,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -419,8 +400,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -438,8 +418,7 @@
                                 "left_option",
                                 "left_control",
                                 "left_shift"
-                            ],
-                            "optional": ["any"]
+                            ]
                         }
                     },
                     "to": {
@@ -457,12 +436,12 @@
                     "from": {
                         "key_code": "right_command",
                         "modifiers": {
-                            "optional": ["any"]
+                            "mandatory": ["any"]
                         }
                     },
                     "to": {
-                        "key_code": "f13",
-                        "modifiers": ["left_command", "left_option", "left_control", "left_shift"]
+                        "key_code": "spacebar",
+                        "modifiers": ["left_option", "left_control"]
                     }
                 },
                 {
