@@ -22,11 +22,7 @@ Configuration files are stored in `config/` and symlinked to their expected loca
 
 ### Homebrew Management
 
-The `src/Brewfile` defines all packages to install. This includes both regular formulae (`brew`) and GUI applications (`cask`). Key tools include:
-
-### Claude Code Integration
-
-The repository includes Claude Code configuration files in `config/.claude/`:
+The `src/Brewfile` defines all packages to install. This includes regular formulae (`brew`), GUI applications (`cask`), and Mac App Store apps (`mas`).
 
 ## Development Notes
 

@@ -1,2 +1,1 @@
-export PATH="$HOME/.local/bin:$PATH"
-claude install
+npm install -g @anthropic-ai/claude-code
