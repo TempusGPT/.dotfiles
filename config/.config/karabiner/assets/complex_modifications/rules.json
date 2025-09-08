@@ -460,41 +460,10 @@
                             "optional": ["any"]
                         }
                     },
-                    "to": [
-                        {
-                            "select_input_source": {
-                                "language": "ko"
-                            }
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "input_source_if",
-                            "input_sources": [{ "language": "en" }]
-                        }
-                    ]
-                },
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "right_command",
-                        "modifiers": {
-                            "optional": ["any"]
-                        }
-                    },
-                    "to": [
-                        {
-                            "select_input_source": {
-                                "language": "en"
-                            }
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "input_source_if",
-                            "input_sources": [{ "language": "ko" }]
-                        }
-                    ]
+                    "to": {
+                        "key_code": "f13",
+                        "modifiers": ["left_command", "left_option", "left_control", "left_shift"]
+                    }
                 },
                 {
                     "type": "basic",
