@@ -18,4 +18,3 @@ This file provides global guidance to Claude Code (claude.ai/code) across all pr
 
 -   Always work with Codex for any non-trivial task beyond simple one-liners or basic queries
 -   Always check Context7 documentation before using any library or framework without exception
--   Always use Sequential Thinking for complex or multi-step problems before implementation
