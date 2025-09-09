@@ -25,3 +25,4 @@ Install and configure MCP servers for Claude Code.
 
 -   **Playwright**: `claude mcp add playwright npx @playwright/mcp@latest`
 -   **Supabase**: `claude mcp add supabase -e SUPABASE_ACCESS_TOKEN=your_token_here -- npx -y @supabase/mcp-server-supabase@latest`
+-   **shadcn/ui**: `claude mcp add shadcn npx shadcn@latest mcp`
