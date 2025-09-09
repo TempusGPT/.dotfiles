@@ -12,6 +12,7 @@ This file provides global guidance to Claude Code (claude.ai/code) across all pr
 
 -   Follow YAGNI principle - don't add functionality until it's actually needed
 -   When choosing libraries, prioritize those that are widely adopted and trending
+-   Prefer modern patterns and approaches over legacy alternatives
 
 ## MCP Guidelines
 
