@@ -8,22 +8,12 @@ Install and configure MCP servers for Claude Code.
 
 ## Command Flow
 
-1. Check currently installed MCP servers: `claude mcp list`
-2. Install universal servers if not already installed
-3. Ask user which project-specific servers they want to install
-4. For servers requiring credentials, prompt for necessary tokens/keys
-5. Install selected project-specific servers with provided credentials
+1. Check currently installed MCP servers
+2. Remove MCP servers not on the list below
+3. Install MCP servers if not already installed
 
 ## MCP servers
-
-### Universal
 
 -   **Codex**: `claude mcp add codex -s user -- codex mcp -c model_reasoning_effort=high -c tools.web_search=true`
 -   **Context7**: `claude mcp add context7 -s user -- npx -y @upstash/context7-mcp`
 -   **Sequential Thinking**: `claude mcp add sequential-thinking -s user -- npx -y @modelcontextprotocol/server-sequential-thinking`
-
-### Project-Specific
-
--   **Playwright**: `claude mcp add playwright npx @playwright/mcp@latest`
--   **shadcn/ui**: `claude mcp add shadcn npx shadcn@latest mcp`
--   **Supabase**: `claude mcp add supabase -e SUPABASE_ACCESS_TOKEN=your_token_here -- npx -y @supabase/mcp-server-supabase@latest`
