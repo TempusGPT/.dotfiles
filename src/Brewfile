@@ -10,11 +10,12 @@ cask "appcleaner"
 cask "discord"
 cask "docker-desktop"
 cask "dotnet-sdk"
+cask "figma"
 cask "google-chrome"
 cask "jordanbaird-ice"
 cask "karabiner-elements"
+cask "notion"
 cask "unity-hub"
 cask "visual-studio-code"
 mas "AdGuard for Safari", id: 1440147259
 mas "Final Cut Pro", id: 424389933
-mas "Pixelmator Pro", id: 1289583905
