@@ -10,3 +10,6 @@ compinit
 
 # fnm
 eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
+
+# rust
+export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
