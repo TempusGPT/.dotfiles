@@ -8,6 +8,7 @@ source homebrew.sh
 source oh-my-zsh.sh
 source nodejs.sh
 source claude.sh
+source codex.sh
 source config.sh
 
 echo ""
