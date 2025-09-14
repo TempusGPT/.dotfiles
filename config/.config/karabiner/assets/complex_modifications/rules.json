@@ -439,13 +439,10 @@
                             "mandatory": ["any"]
                         }
                     },
-                    "to": [
-                        {
-                            "key_code": "spacebar",
-                            "modifiers": ["left_option", "left_control"]
-                        },
-                        { "key_code": "vk_none" }
-                    ]
+                    "to": {
+                        "key_code": "f13",
+                        "modifiers": ["left_command", "left_option", "left_control"]
+                    }
                 },
                 {
                     "type": "basic",
