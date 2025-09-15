@@ -3,6 +3,7 @@ mkdir -p ~/.codex
 
 # Create config.toml with specified settings
 cat > ~/.codex/config.toml << 'EOF'
+model = "gpt-5-codex"
 model_reasoning_effort = "high"
 model_verbosity = "high"
 tools.web_search = true
