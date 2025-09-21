@@ -1,4 +1,3 @@
-brew "codex"
 brew "deno"
 brew "fnm"
 brew "gh"
