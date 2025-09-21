@@ -14,3 +14,6 @@ eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
 # rust
 export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# specify
+alias specify="uvx --from git+https://github.com/github/spec-kit.git specify init --here"
