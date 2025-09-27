@@ -18,70 +18,70 @@ SECURITY CATEGORIES TO EXAMINE:
 
 **Input Validation Vulnerabilities:**
 
--   SQL injection via unsanitized user input
--   Command injection in system calls or subprocesses
--   XXE injection in XML parsing
--   Template injection in templating engines
--   NoSQL injection in database queries
--   Path traversal in file operations
+- SQL injection via unsanitized user input
+- Command injection in system calls or subprocesses
+- XXE injection in XML parsing
+- Template injection in templating engines
+- NoSQL injection in database queries
+- Path traversal in file operations
 
 **Authentication & Authorization Issues:**
 
--   Authentication bypass logic
--   Privilege escalation paths
--   Session management flaws
--   JWT token vulnerabilities
--   Authorization logic bypasses
+- Authentication bypass logic
+- Privilege escalation paths
+- Session management flaws
+- JWT token vulnerabilities
+- Authorization logic bypasses
 
 **Crypto & Secrets Management:**
 
--   Hardcoded API keys, passwords, or tokens
--   Weak cryptographic algorithms or implementations
--   Improper key storage or management
--   Cryptographic randomness issues
--   Certificate validation bypasses
+- Hardcoded API keys, passwords, or tokens
+- Weak cryptographic algorithms or implementations
+- Improper key storage or management
+- Cryptographic randomness issues
+- Certificate validation bypasses
 
 **Injection & Code Execution:**
 
--   Remote code execution via deseralization
--   Pickle injection in Python
--   YAML deserialization vulnerabilities
--   Eval injection in dynamic code execution
--   XSS vulnerabilities in web applications (reflected, stored, DOM-based)
+- Remote code execution via deseralization
+- Pickle injection in Python
+- YAML deserialization vulnerabilities
+- Eval injection in dynamic code execution
+- XSS vulnerabilities in web applications (reflected, stored, DOM-based)
 
 **Data Exposure:**
 
--   Sensitive data logging or storage
--   PII handling violations
--   API endpoint data leakage
--   Debug information exposure
+- Sensitive data logging or storage
+- PII handling violations
+- API endpoint data leakage
+- Debug information exposure
 
 Additional notes:
 
--   Even if something is only exploitable from the local network, it can still be a HIGH severity issue
+- Even if something is only exploitable from the local network, it can still be a HIGH severity issue
 
 ANALYSIS METHODOLOGY:
 
 Phase 1 - Repository Context Research (Use file search tools):
 
--   Identify existing security frameworks and libraries in use
--   Look for established secure coding patterns in the codebase
--   Examine existing sanitization and validation patterns
--   Understand the project's security model and threat model
+- Identify existing security frameworks and libraries in use
+- Look for established secure coding patterns in the codebase
+- Examine existing sanitization and validation patterns
+- Understand the project's security model and threat model
 
 Phase 2 - Comparative Analysis:
 
--   Compare new code changes against existing security patterns
--   Identify deviations from established secure practices
--   Look for inconsistent security implementations
--   Flag code that introduces new attack surfaces
+- Compare new code changes against existing security patterns
+- Identify deviations from established secure practices
+- Look for inconsistent security implementations
+- Flag code that introduces new attack surfaces
 
 Phase 3 - Vulnerability Assessment:
 
--   Examine each modified file for security implications
--   Trace data flow from user inputs to sensitive operations
--   Look for privilege boundaries being crossed unsafely
--   Identify injection points and unsafe deserialization
+- Examine each modified file for security implications
+- Trace data flow from user inputs to sensitive operations
+- Look for privilege boundaries being crossed unsafely
+- Identify injection points and unsafe deserialization
 
 REQUIRED OUTPUT FORMAT:
 
@@ -91,23 +91,23 @@ For example:
 
 # Vuln 1: XSS: `foo.py:42`
 
--   Severity: High
--   Description: User input from `username` parameter is directly interpolated into HTML without escaping, allowing reflected XSS attacks
--   Exploit Scenario: Attacker crafts URL like /bar?q=<script>alert(document.cookie)</script> to execute JavaScript in victim's browser, enabling session hijacking or data theft
--   Recommendation: Use Flask's escape() function or Jinja2 templates with auto-escaping enabled for all user inputs rendered in HTML
+- Severity: High
+- Description: User input from `username` parameter is directly interpolated into HTML without escaping, allowing reflected XSS attacks
+- Exploit Scenario: Attacker crafts URL like /bar?q=<script>alert(document.cookie)</script> to execute JavaScript in victim's browser, enabling session hijacking or data theft
+- Recommendation: Use Flask's escape() function or Jinja2 templates with auto-escaping enabled for all user inputs rendered in HTML
 
 SEVERITY GUIDELINES:
 
--   **HIGH**: Directly exploitable vulnerabilities leading to RCE, data breach, or authentication bypass
--   **MEDIUM**: Vulnerabilities requiring specific conditions but with significant impact
--   **LOW**: Defense-in-depth issues or lower-impact vulnerabilities
+- **HIGH**: Directly exploitable vulnerabilities leading to RCE, data breach, or authentication bypass
+- **MEDIUM**: Vulnerabilities requiring specific conditions but with significant impact
+- **LOW**: Defense-in-depth issues or lower-impact vulnerabilities
 
 CONFIDENCE SCORING:
 
--   0.9-1.0: Certain exploit path identified, tested if possible
--   0.8-0.9: Clear vulnerability pattern with known exploitation methods
--   0.7-0.8: Suspicious pattern requiring specific conditions to exploit
--   Below 0.7: Don't report (too speculative)
+- 0.9-1.0: Certain exploit path identified, tested if possible
+- 0.8-0.9: Clear vulnerability pattern with known exploitation methods
+- 0.7-0.8: Suspicious pattern requiring specific conditions to exploit
+- Below 0.7: Don't report (too speculative)
 
 FINAL REMINDER:
 
@@ -163,9 +163,9 @@ SIGNAL QUALITY CRITERIA - For remaining findings, assess:
 
 For each finding, assign a confidence score from 1-10:
 
--   1-3: Low confidence, likely false positive or noise
--   4-6: Medium confidence, needs investigation
--   7-10: High confidence, likely true vulnerability
+- 1-3: Low confidence, likely false positive or noise
+- 4-6: Medium confidence, needs investigation
+- 7-10: High confidence, likely true vulnerability
 
 START ANALYSIS:
 

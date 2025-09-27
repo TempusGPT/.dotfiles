@@ -10,9 +10,9 @@ This is a personal dotfiles repository for configuring macOS development environ
 
 The repository follows a modular installation approach:
 
--   **bootstrap.sh**: Entry point that orchestrates the installation by sourcing individual setup scripts
--   **src/**: Contains installation scripts and package definitions
--   **config/**: Actual configuration files organized by tool
+- **bootstrap.sh**: Entry point that orchestrates the installation by sourcing individual setup scripts
+- **src/**: Contains installation scripts and package definitions
+- **config/**: Actual configuration files organized by tool
 
 ## Important Implementation Details
 
@@ -26,6 +26,6 @@ The `src/Brewfile` defines all packages to install. This includes regular formul
 
 ## Development Notes
 
--   When modifying installation scripts, test changes carefully as they affect system configuration
--   Configuration files in `config/` are tracked in git, making them portable across machines
--   The repository assumes a clean macOS environment but uses `-f` flags to handle existing files
+- When modifying installation scripts, test changes carefully as they affect system configuration
+- Configuration files in `config/` are tracked in git, making them portable across machines
+- The repository assumes a clean macOS environment but uses `-f` flags to handle existing files
