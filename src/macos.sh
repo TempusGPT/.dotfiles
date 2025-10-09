@@ -19,7 +19,6 @@ defaults write com.apple.finder "ShowRemovableMediaOnDesktop" -bool "false"
 
 # Keyboard preferences
 defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool "false"
-defaults write com.apple.HIToolbox AppleFnUsageType -int "0"
 defaults write NSGlobalDomain AppleKeyboardUIMode -int "2"
 
 # Apply changes
