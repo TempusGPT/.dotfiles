@@ -6,8 +6,8 @@ cd "$(dirname $0)"/src
 source macos.sh
 source homebrew.sh
 source oh-my-zsh.sh
-source nodejs.sh
 source config.sh
+source nodejs.sh
 
 echo ""
 echo "Setup completed successfully!"
