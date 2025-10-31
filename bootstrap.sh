@@ -1,13 +1,14 @@
 #!/bin/bash
 
 set -e
-cd "$(dirname $0)"/src
+cd "$(dirname $0)"
 
-source macos.sh
-source homebrew.sh
-source oh-my-zsh.sh
-source config.sh
-source nodejs.sh
+source src/macos.sh
+source src/homebrew.sh
+source src/oh-my-zsh.sh
+source src/cursor.sh
+source src/config.sh
+source src/nodejs.sh
 
 echo ""
 echo "Setup completed successfully!"
