@@ -48,6 +48,7 @@
     "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
     "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
     "[markdown]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+    "[yaml]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
     "prettier.printWidth": 100,
     "prettier.tabWidth": 4,
 
