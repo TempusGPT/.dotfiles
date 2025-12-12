@@ -6,7 +6,6 @@ cd "$(dirname $0)"
 source src/macos.sh
 source src/homebrew.sh
 source src/oh-my-zsh.sh
-source src/cursor.sh
 source src/config.sh
 source src/nodejs.sh
 
