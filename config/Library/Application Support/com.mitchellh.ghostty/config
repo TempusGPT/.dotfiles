@@ -1,4 +1,5 @@
-font-family =
 font-family = Menlo
 font-family = D2Coding
 theme = Dark Modern
+working-directory = /Users/changyong/Desktop
+macos-titlebar-proxy-icon = hidden
