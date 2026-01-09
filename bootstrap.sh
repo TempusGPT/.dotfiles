@@ -3,10 +3,10 @@
 set -e
 cd "$(dirname $0)"
 
-source src/homebrew.sh
-source src/shell.sh
-source src/config.sh
-source src/nodejs.sh
+source src/brew.sh
+source src/zsh.sh
+source src/link.sh
+source src/node.sh
 
 echo ""
 echo "Setup completed successfully!"
