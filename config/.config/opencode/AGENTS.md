@@ -1,0 +1,2 @@
+- Always respond in Korean
+- Write comments and commit messages in English
