@@ -14,3 +14,10 @@ eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
 # rust
 export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# dev alias - opens opencode and code in the specified directory
+dev() {
+    local target_dir="${1:-.}"
+    code "$target_dir"
+    opencode "$target_dir"
+}
