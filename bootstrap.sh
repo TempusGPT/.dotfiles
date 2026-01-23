@@ -7,6 +7,7 @@ source src/brew.sh
 source src/zsh.sh
 source src/link.sh
 source src/node.sh
+source src/codex.sh
 
 echo ""
 echo "Setup completed successfully!"
