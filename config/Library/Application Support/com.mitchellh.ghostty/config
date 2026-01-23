@@ -3,3 +3,4 @@ font-family = D2Coding
 theme = Dark Modern
 working-directory = /Users/changyong/Desktop
 macos-titlebar-proxy-icon = hidden
+macos-option-as-alt = true
