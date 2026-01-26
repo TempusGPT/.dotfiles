@@ -1,0 +1,36 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "theme": "system",
+    "default_agent": "default",
+    "agent": {
+        "default": {
+            "mode": "primary",
+            "model": "anthropic/claude-opus-4-5",
+            "reasoningEffort": "high",
+            "permission": {
+                "edit": "ask",
+                "bash": "ask"
+            }
+        },
+        "plan": {
+            "model": "openai/gpt-5.2",
+            "options": {
+                "reasoningEffort": "low"
+            }
+        },
+        "build": {
+            "model": "openai/gpt-5.2-codex",
+            "reasoningEffort": "low"
+        }
+    },
+    "mcp": {
+        "context7": {
+            "type": "remote",
+            "url": "https://mcp.context7.com/mcp"
+        },
+        "grep-app": {
+            "type": "remote",
+            "url": "https://mcp.grep.app"
+        }
+    }
+}
