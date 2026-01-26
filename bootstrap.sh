@@ -3,10 +3,13 @@
 set -e
 cd "$(dirname $0)"
 
-source src/brew.sh
+source src/homebrew.sh
+source src/git.sh
 source src/zsh.sh
-source src/link.sh
 source src/node.sh
+source src/karabiner.sh
+source src/opencode.sh
+source src/ghostty.sh
 
 echo ""
 echo "Setup completed successfully!"

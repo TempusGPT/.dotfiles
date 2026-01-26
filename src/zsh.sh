@@ -3,3 +3,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # Suppress "Last login" message
 touch ~/.hushlogin
+
+# Symlink configuration files
+ln -snf ~/.dotfiles/config/.zprofile ~/.zprofile
+ln -snf ~/.dotfiles/config/.zshrc ~/.zshrc
