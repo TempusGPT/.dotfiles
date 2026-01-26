@@ -1,7 +1,6 @@
 brew "fnm"
 brew "gh"
-brew "rustup"
-brew "uv"
+brew "opencode"
 cask "adguard"
 cask "alt-tab"
 cask "appcleaner"

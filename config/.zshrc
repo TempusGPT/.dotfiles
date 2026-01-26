@@ -11,13 +11,9 @@ compinit
 # Fast node manager
 eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
 
-# Rust
-export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-
 # Dev function
 dev() {
     [[ "$1" ]] && cd "$1"
     code .
-    claude
+    opencode
 }
