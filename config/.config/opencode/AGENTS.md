@@ -11,5 +11,6 @@ This document provides guidelines for AI coding agents working in any repository
 
 ## MCP Guidelines
 
+- Use `exa` to search the live web and crawl URLs for up-to-date information.
 - Use `context7` to fetch documentation and code examples from official sources.
-- Use `grep-app` to search code patterns across millions of GitHub repositories.
+- Use `grep` to search code patterns across millions of GitHub repositories.
