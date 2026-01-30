@@ -15,5 +15,5 @@ eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
 dev() {
     [[ "$1" ]] && cd "$1"
     code .
-    opencode
+    codex
 }
