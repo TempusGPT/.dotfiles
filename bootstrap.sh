@@ -8,8 +8,9 @@ source src/git.sh
 source src/zsh.sh
 source src/node.sh
 source src/karabiner.sh
-source src/opencode.sh
 source src/ghostty.sh
+source src/claude.sh
+source src/codex.sh
 
 echo ""
 echo "Setup completed successfully!"
