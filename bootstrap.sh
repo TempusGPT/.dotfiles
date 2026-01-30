@@ -11,6 +11,7 @@ source src/karabiner.sh
 source src/ghostty.sh
 source src/claude.sh
 source src/codex.sh
+source src/zed.sh
 
 echo ""
 echo "Setup completed successfully!"

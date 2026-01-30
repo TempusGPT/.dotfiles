@@ -1,0 +1,37 @@
+{
+  // Appearance
+  "theme": "One Dark",
+  "buffer_font_size": 14,
+  "buffer_font_family": "Menlo",
+  "buffer_font_fallbacks": ["D2Coding"],
+  "ui_font_family": ".SystemUIFont",
+
+  // Editor
+  "format_on_save": "off",
+  "autosave": { "after_delay": { "milliseconds": 1000 } },
+  "soft_wrap": "editor_width",
+
+  // Languages & Tools
+  "languages": {
+    "HTML": { "tab_size": 2 },
+    "CSS": { "tab_size": 2 },
+    "Svelte": { "tab_size": 2 },
+  },
+
+  // Window & Layout
+  "title_bar": { "show_user_picture": false },
+  "tab_bar": { "show_tab_bar_buttons": false },
+  "search": { "button": false },
+  "diagnostics": { "button": false },
+  "outline_panel": { "button": false },
+  "collaboration_panel": { "button": false },
+  "debugger": { "button": false },
+  "terminal": { "button": false },
+  "status_bar": { "active_encoding_button": "enabled" },
+
+  // Version Control
+  "git": { "inline_blame": { "enabled": false } },
+
+  // AI
+  "disable_ai": true,
+}

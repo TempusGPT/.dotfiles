@@ -1,0 +1,32 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-i": "editor::ShowCompletions",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-alt-cmd-shift-r": "editor::Rename",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-alt-cmd-shift-f": "editor::Format",
+    },
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-shift-tab": "pane::ActivatePreviousItem",
+    },
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-tab": "pane::ActivateNextItem",
+    },
+  },
+]

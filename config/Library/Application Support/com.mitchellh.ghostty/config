@@ -1,6 +1,7 @@
 font-family = Menlo
 font-family = D2Coding
-theme = Dark Modern
+font-size = 14
+theme = One Half Dark
 working-directory = /Users/changyong/Desktop
 macos-titlebar-proxy-icon = hidden
 macos-option-as-alt = true
