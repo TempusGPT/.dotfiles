@@ -34,4 +34,12 @@
 
   // AI
   "disable_ai": true,
+
+  // Extensions
+  "auto_install_extensions": {
+    "html": true,
+    "toml": true,
+    "git-firefly": true,
+    "svelte": true,
+  },
 }
