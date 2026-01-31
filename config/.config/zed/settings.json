@@ -100,6 +100,20 @@
       "title_bar.background": "#181c20ff",
       "title_bar.inactive_background": "#181c20ff",
       "elevated_surface.background": "#181c20ff",
+
+      // Element states
+      "element.hover": "#272c33ff",
+      "element.active": "#363c46ff",
+      "element.selected": "#363c46ff",
+      "ghost_element.hover": "#272c33ff",
+      "ghost_element.active": "#363c46ff",
+      "ghost_element.selected": "#363c46ff",
+
+      // Others
+      "drop_target.background": "#363c4680",
+      "scrollbar.thumb.hover_background": "#c8ccd44c",
+      "scrollbar.track.border": "#363c46ff",
+      "border": "#363c46ff",
     },
   },
 }
