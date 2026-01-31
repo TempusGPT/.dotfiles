@@ -10,10 +10,3 @@ compinit
 
 # Fast node manager
 eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
-
-# Dev function
-dev() {
-    [[ "$1" ]] && cd "$1"
-    zed .
-    codex
-}
