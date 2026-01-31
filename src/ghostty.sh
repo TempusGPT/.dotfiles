@@ -1,5 +1,5 @@
 # Create necessary directories
-mkdir -p ~/Library/Application\ Support/com.mitchellh.ghostty
+mkdir -p ~/.config/ghostty
 
 # Symlink configuration files
-ln -snf ~/.dotfiles/config/Library/Application\ Support/com.mitchellh.ghostty/config ~/Library/Application\ Support/com.mitchellh.ghostty/config
+ln -snf ~/.dotfiles/config/.config/ghostty/config ~/.config/ghostty/config
