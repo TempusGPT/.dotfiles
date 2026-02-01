@@ -14,6 +14,10 @@
       "milliseconds": 1000,
     },
   },
+  "toolbar": {
+    "quick_actions": false,
+    "breadcrumbs": false,
+  },
 
   // Languages & Tools
   "languages": {
@@ -36,6 +40,7 @@
     "show_user_picture": false,
   },
   "tab_bar": {
+    "show_nav_history_buttons": false,
     "show_tab_bar_buttons": false,
   },
   "diagnostics": {
@@ -58,9 +63,13 @@
   "project_panel": {
     "default_width": 360,
   },
+  "notification_panel": {
+    "button": false,
+  },
 
   // Terminal
   "terminal": {
+    "button": false,
     "blinking": "on",
     "cursor_shape": "bar",
     "default_height": 640,
