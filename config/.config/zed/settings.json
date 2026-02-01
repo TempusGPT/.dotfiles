@@ -34,6 +34,23 @@
   "file_types": {
     "JSON": [".prettierrc"],
   },
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+      },
+      "enable_lsp_tasks": true,
+    },
+  },
 
   // Window & Layout
   "title_bar": {
@@ -42,6 +59,9 @@
   "tab_bar": {
     "show_nav_history_buttons": false,
     "show_tab_bar_buttons": false,
+  },
+  "tabs": {
+    "file_icons": true,
   },
   "diagnostics": {
     "button": false,
