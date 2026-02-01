@@ -112,6 +112,7 @@
       "title_bar.background": "#181c20ff",
       "title_bar.inactive_background": "#181c20ff",
       "elevated_surface.background": "#181c20ff",
+      "surface.background": "#181c20ff",
 
       // Element states
       "element.hover": "#272c33ff",
