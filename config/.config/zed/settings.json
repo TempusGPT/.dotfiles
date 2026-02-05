@@ -9,43 +9,24 @@
   // Editor
   "format_on_save": "off",
   "soft_wrap": "editor_width",
-  "autosave": {
-    "after_delay": {
-      "milliseconds": 1000,
-    },
-  },
-  "toolbar": {
-    "quick_actions": false,
-    "breadcrumbs": false,
-  },
+  "autosave": { "after_delay": { "milliseconds": 1000 } },
+  "toolbar": { "quick_actions": false, "breadcrumbs": false },
 
   // Languages & Tools
   "languages": {
-    "HTML": {
-      "tab_size": 2,
-    },
-    "CSS": {
-      "tab_size": 2,
-    },
-    "Svelte": {
-      "tab_size": 2,
-    },
+    "HTML": { "tab_size": 2 },
+    "CSS": { "tab_size": 2 },
+    "Svelte": { "tab_size": 2 },
   },
-  "file_types": {
-    "JSON": [".prettierrc"],
-  },
+  "file_types": { "JSON": [".prettierrc"] },
   "lsp": {
     "vtsls": {
       "settings": {
         "typescript": {
-          "updateImportsOnFileMove": {
-            "enabled": "always",
-          },
+          "updateImportsOnFileMove": { "enabled": "always" },
         },
         "javascript": {
-          "updateImportsOnFileMove": {
-            "enabled": "always",
-          },
+          "updateImportsOnFileMove": { "enabled": "always" },
         },
       },
       "enable_lsp_tasks": true,
@@ -53,39 +34,21 @@
   },
 
   // Window & Layout
-  "title_bar": {
-    "show_user_picture": false,
-  },
+  "title_bar": { "show_user_picture": false },
   "tab_bar": {
     "show_nav_history_buttons": false,
     "show_tab_bar_buttons": false,
   },
-  "tabs": {
-    "file_icons": true,
-  },
-  "diagnostics": {
-    "button": false,
-  },
-  "outline_panel": {
-    "button": false,
-  },
-  "collaboration_panel": {
-    "button": false,
-  },
-  "debugger": {
-    "button": false,
-  },
-  "status_bar": {
-    "active_encoding_button": "enabled",
-  },
+  "tabs": { "file_icons": true },
+  "diagnostics": { "button": false },
+  "outline_panel": { "button": false },
+  "collaboration_panel": { "button": false },
+  "debugger": { "button": false },
+  "status_bar": { "active_encoding_button": "enabled" },
 
   // Panels
-  "project_panel": {
-    "default_width": 360,
-  },
-  "notification_panel": {
-    "button": false,
-  },
+  "project_panel": { "default_width": 360 },
+  "notification_panel": { "button": false },
 
   // Terminal
   "terminal": {
@@ -96,11 +59,7 @@
   },
 
   // Version Control
-  "git": {
-    "inline_blame": {
-      "enabled": false,
-    },
-  },
+  "git": { "inline_blame": { "enabled": false } },
 
   // AI
   "disable_ai": true,

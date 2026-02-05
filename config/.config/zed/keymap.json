@@ -1,32 +1,29 @@
 [
+  // Show completions
   {
     "context": "Editor",
-    "bindings": {
-      "cmd-i": "editor::ShowCompletions",
-    },
+    "bindings": { "cmd-i": "editor::ShowCompletions" },
   },
+
+  // Rename symbols
   {
     "context": "Editor",
-    "bindings": {
-      "ctrl-alt-cmd-shift-r": "editor::Rename",
-    },
+    "bindings": { "ctrl-alt-cmd-shift-r": "editor::Rename" },
   },
+
+  // Format codes
   {
     "context": "Editor",
-    "bindings": {
-      "ctrl-alt-cmd-shift-f": "editor::Format",
-    },
+    "bindings": { "ctrl-alt-cmd-shift-f": "editor::Format" },
+  },
+
+  // Switch tabs
+  {
+    "context": "Pane",
+    "bindings": { "ctrl-shift-tab": "pane::ActivatePreviousItem" },
   },
   {
     "context": "Pane",
-    "bindings": {
-      "ctrl-shift-tab": "pane::ActivatePreviousItem",
-    },
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "ctrl-tab": "pane::ActivateNextItem",
-    },
+    "bindings": { "ctrl-tab": "pane::ActivateNextItem" },
   },
 ]
