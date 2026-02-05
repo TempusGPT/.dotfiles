@@ -1,8 +1,8 @@
 [
-  // Show completions
+  // Format codes
   {
     "context": "Editor",
-    "bindings": { "cmd-i": "editor::ShowCompletions" },
+    "bindings": { "ctrl-alt-cmd-shift-f": "editor::Format" },
   },
 
   // Rename symbols
@@ -11,19 +11,19 @@
     "bindings": { "ctrl-alt-cmd-shift-r": "editor::Rename" },
   },
 
-  // Format codes
+  // Show completions
   {
     "context": "Editor",
-    "bindings": { "ctrl-alt-cmd-shift-f": "editor::Format" },
+    "bindings": { "ctrl-alt-cmd-shift-c": "editor::ShowCompletions" },
   },
 
   // Switch tabs
   {
     "context": "Pane",
-    "bindings": { "ctrl-shift-tab": "pane::ActivatePreviousItem" },
+    "bindings": { "ctrl-tab": "pane::ActivateNextItem" },
   },
   {
     "context": "Pane",
-    "bindings": { "ctrl-tab": "pane::ActivateNextItem" },
+    "bindings": { "ctrl-shift-tab": "pane::ActivatePreviousItem" },
   },
 ]
