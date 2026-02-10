@@ -7,6 +7,7 @@ claude plugin install code-simplifier
 claude plugin install context7
 claude plugin install feature-dev
 claude plugin install frontend-design
+claude plugin install rust-analyzer-lsp
 claude plugin install typescript-lsp
 
 # Symlink configuration files
