@@ -1,9 +1,14 @@
-# Configure MCP servers
-claude mcp add context7 -s user -t http https://mcp.context7.com/mcp
-claude mcp add grep -s user -t http https://mcp.grep.app
+# Install MCP servers
+claude mcp add codex --scope user codex mcp-server
 
-# Create necessary directories
-mkdir -p ~/.claude
+# Install official plugins
+claude plugin install code-review
+claude plugin install code-simplifier
+claude plugin install context7
+claude plugin install feature-dev
+claude plugin install frontend-design
+claude plugin install typescript-lsp
 
 # Symlink configuration files
-ln -snf ~/.dotfiles/config/.agents/AGENTS.md ~/.claude/CLAUDE.md
+mkdir -p ~/.claude
+ln -snf ~/.dotfiles/config/.claude/CLAUDE.md ~/.claude/CLAUDE.md
