@@ -13,3 +13,4 @@ claude plugin install typescript-lsp
 # Symlink configuration files
 mkdir -p ~/.claude
 ln -snf ~/.dotfiles/config/.claude/CLAUDE.md ~/.claude/CLAUDE.md
+ln -snf ~/.dotfiles/config/.claude/settings.json ~/.claude/settings.json

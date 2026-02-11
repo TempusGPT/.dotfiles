@@ -1,6 +1,8 @@
 brew "fnm"
 brew "gh"
+brew "pnpm"
 brew "rustup"
+brew "terminal-notifier"
 cask "adguard"
 cask "alt-tab"
 cask "appcleaner"
