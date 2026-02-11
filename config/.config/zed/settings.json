@@ -9,6 +9,7 @@
   // Editor
   "format_on_save": "off",
   "soft_wrap": "editor_width",
+  "ensure_final_newline_on_save": false,
   "autosave": { "after_delay": { "milliseconds": 1000 } },
   "toolbar": { "quick_actions": false, "breadcrumbs": false },
 
