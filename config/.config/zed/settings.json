@@ -35,11 +35,11 @@
   },
 
   // Window & Layout
-  "title_bar": { "show_user_picture": false },
   "tab_bar": {
     "show_nav_history_buttons": false,
     "show_tab_bar_buttons": false,
   },
+  "title_bar": { "show_user_picture": false },
   "tabs": { "file_icons": true },
   "diagnostics": { "button": false },
   "outline_panel": { "button": false },
