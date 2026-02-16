@@ -13,5 +13,6 @@ claude mcp add codex --scope user codex mcp-server
 
 # Symlink configuration files
 mkdir -p ~/.claude
+ln -snf ~/.dotfiles/config/.claude/skills ~/.claude/skills
 ln -snf ~/.dotfiles/config/.claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -snf ~/.dotfiles/config/.claude/settings.json ~/.claude/settings.json

@@ -1,6 +1,5 @@
 {
   "permissions": {
-    "defaultMode": "acceptEdits",
     "allow": [
       "WebSearch",
       "WebFetch(*)",
@@ -8,7 +7,8 @@
       "mcp__plugin_context7-plugin_context7__query-docs",
       "mcp__codex__codex",
       "mcp__codex__codex-reply"
-    ]
+    ],
+    "defaultMode": "acceptEdits"
   },
   "hooks": {
     "Stop": [
