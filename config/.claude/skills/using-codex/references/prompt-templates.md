@@ -1,6 +1,8 @@
 # Codex Prompt Templates
 
-Use these templates when invoking `mcp__codex__codex`. Replace `[placeholders]` with actual content. Keep prompts focused and evidence-rich.
+Use these templates when invoking `mcp__codex__codex`. Replace `[placeholders]` with actual content.
+
+**Key rule**: Point to file paths. Do NOT paste file contents — Codex will read them itself.
 
 ---
 
@@ -8,63 +10,54 @@ Use these templates when invoking `mcp__codex__codex`. Replace `[placeholders]` 
 
 ```
 ## Problem
-[One sentence describing the bug or unexpected behavior]
+[One sentence describing the bug]
+
+## Key Files
+- [path/to/file.ts] — [what this file does and why it's relevant]
+- [path/to/other.ts:42-60] — [specific area of interest]
 
 ## Observed Behavior
-[What actually happens -- include error messages, stack traces, or logs]
+[Error messages or symptoms — keep concise]
 
 ## Expected Behavior
 [What should happen instead]
 
-## Evidence Gathered
-[Relevant code snippets, configuration, reproduction steps]
-
-## Environment
-[Language version, framework, OS, relevant dependencies]
-
 ## Question
-[Specific question -- e.g., "What are the most likely root causes given this evidence?"]
+[e.g., "What are the most likely root causes?"]
 ```
 
 ## 2. Plan Review
 
 ```
 ## Plan
-[Paste the full implementation plan]
+[The plan is in [path/to/plan.md] OR paste a short bullet list if the plan isn't saved to a file]
 
-## Context
-[What problem this plan solves, any constraints or user requirements]
+## Goal
+[One sentence: what problem this plan solves]
+
+## Key Files Affected
+- [path/to/file.ts] — [how it will change]
 
 ## Review Criteria
-Evaluate this plan for:
-1. **Completeness** -- Are any steps missing?
-2. **Ordering** -- Are dependencies between steps respected?
-3. **Risk** -- Which steps are most likely to fail or cause issues?
-4. **Simplicity** -- Can any steps be simplified or removed?
-5. **Testability** -- How will we verify each step succeeded?
-
+Evaluate for: completeness, ordering, risk, simplicity, testability.
 Identify the top 3 concerns, if any.
 ```
 
 ## 3. Code Review
 
 ```
-## Changes
-[Paste the diff or describe the changes with relevant code]
+## What Changed
+[One sentence summary of the changes]
+
+## Files to Review
+- [path/to/file.ts] — [what changed and why]
+- [path/to/other.ts:30-50] — [specific change area]
 
 ## Intent
-[What these changes are meant to accomplish]
-
-## Existing Patterns
-[How the codebase currently handles similar concerns]
+[What these changes accomplish]
 
 ## Review Focus
-Evaluate for:
-1. **Correctness** -- Logic errors, edge cases, off-by-one errors
-2. **Architecture** -- Consistency with existing patterns, coupling
-3. **Security** -- Injection, auth issues, data exposure
-4. **Performance** -- Unnecessary allocations, N+1 queries, blocking calls
-
+Evaluate for: correctness, architecture consistency, security, performance.
 Flag only real issues. Do not suggest style changes.
 ```
 
@@ -75,16 +68,17 @@ Flag only real issues. Do not suggest style changes.
 [What architectural or design decision needs to be made]
 
 ## Options
-[List each option with a brief description]
+1. [Option A] — [brief description]
+2. [Option B] — [brief description]
 
 ## Constraints
-[Performance requirements, team size, timeline, compatibility needs]
+[Performance, compatibility, timeline needs]
 
-## Context
-[Current architecture, tech stack, existing patterns]
+## Relevant Code
+- [path/to/file.ts] — [explore this for current patterns]
 
 ## Question
-[e.g., "Which option best balances simplicity and extensibility given these constraints?"]
+[e.g., "Which option best balances simplicity and extensibility?"]
 ```
 
 ## 5. Unblocking
@@ -93,15 +87,12 @@ Flag only real issues. Do not suggest style changes.
 ## Current Task
 [What you are trying to accomplish]
 
-## What Worked
-[Steps completed successfully so far]
+## Relevant Files
+- [path/to/file.ts] — [area where the problem occurs]
 
-## Where Stuck
-[The specific point of failure or confusion]
-
-## Already Tried
-[Approaches attempted and why they failed]
+## What Failed
+[Approaches attempted and why they failed — keep concise]
 
 ## Question
-[e.g., "What alternative approaches should I consider?" or "What am I missing?"]
+[e.g., "What alternative approaches should I consider?"]
 ```
