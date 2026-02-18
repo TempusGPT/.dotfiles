@@ -37,7 +37,7 @@ If Codex needs to experiment (modify files, run tests), create an isolated workt
 git worktree add .worktrees/debug-<issue> -b debug/<issue>
 ```
 
-If analysis-only (read code, trace logic): skip worktree, use `sandbox: "read-only"`.
+If analysis-only (read code, trace logic): skip worktree.
 
 Verify `.worktrees` is in `.gitignore` before creating. If not, add it first.
 
@@ -74,8 +74,11 @@ prompt: |
   If you cannot determine root cause, say so and explain what you investigated.
 
 cwd: [worktree path or project root]
-sandbox: "read-only"
+sandbox: "read-only"           # analysis-only (no worktree)
+sandbox: "workspace-write"     # when using worktree (Codex can experiment)
 ```
+
+Choose the appropriate sandbox mode based on Step 2.
 
 To continue an existing Codex session with additional context, use `mcp__codex__codex-reply` with the `threadId` from the initial response.
 

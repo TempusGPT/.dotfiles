@@ -23,11 +23,12 @@ Read the plan first. Do not start coding without user confirmation. Do not merge
 
 1. Read the plan document, extract all tasks
 2. Parse plan header for branch name, test/typecheck/lint commands
-3. Create feature branch:
+3. Capture BASE_SHA for later review: `BASE_SHA=$(git rev-parse HEAD)`
+4. Create feature branch:
    ```bash
    git checkout -b feature/<plan-name>
    ```
-4. Create TodoList with all tasks using `TaskCreate`
+5. Create TodoList with all tasks using `TaskCreate`
 
 ### Step 2: Execute Tasks Sequentially
 
@@ -38,7 +39,7 @@ For each task, in order:
 2. **Dispatch vibe-implementer** — fresh subagent per task:
 
    ```
-   Task tool (general-purpose):
+   Task tool (vibe-implementer):
      description: "Implement Task N: [task name]"
      prompt: |
        You are implementing Task N: [task name]
@@ -55,14 +56,6 @@ For each task, in order:
        - Test: [test command from plan]
        - Typecheck: [typecheck command from plan]
        - Lint: [lint command from plan]
-
-       ## Instructions
-       Follow the vibe-implementer agent protocol:
-       1. Ask questions if anything is unclear
-       2. TDD: write failing test, implement, verify
-       3. Run all verifications (test, typecheck, lint)
-       4. Commit with descriptive message
-       5. Self-review, then report back
    ```
 
 3. **Handle questions** — if implementer asks questions, answer and re-dispatch
