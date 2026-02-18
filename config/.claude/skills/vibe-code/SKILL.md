@@ -11,11 +11,10 @@ Execute implementation plans by dispatching a fresh vibe-implementer subagent pe
 ## Hard Gate
 
 ```
-NO CODING WITHOUT APPROVED PLAN
 NO MERGE WITHOUT APPROVED REVIEW
 ```
 
-Read the plan first. Do not start coding without user confirmation. Do not merge without vibe-review approval.
+Do not merge without vibe-review approval.
 
 ## Process
 
@@ -23,8 +22,11 @@ Read the plan first. Do not start coding without user confirmation. Do not merge
 
 1. Read the plan document, extract all tasks
 2. Parse plan header for branch name, test/typecheck/lint commands
-3. Capture BASE_SHA for later review: `BASE_SHA=$(git rev-parse HEAD)`
-4. Create feature branch: `git checkout -b feature/<plan-name>`
+3. Verify on the correct feature branch: `git branch --show-current`
+   - If on feature branch with plan commit → proceed
+   - If on main → check out the feature branch from plan
+   - If no feature branch exists → ask user where the plan is
+4. Capture BASE_SHA: `BASE_SHA=$(git rev-parse HEAD)`
 5. Create TodoList with all tasks using `TaskCreate`
 
 ### Step 2: Execute Tasks Sequentially
@@ -72,21 +74,45 @@ For each task, in order:
 
 After all tasks complete:
 
-1. Dispatch **vibe-review** (code review mode) with:
-   - `BASE_SHA`: commit before first task
-   - `HEAD_SHA`: current HEAD
-   - Plan document content
-   - Description of what was implemented
-
-2. Process review results:
+1. Invoke vibe-review skill (code review mode) with BASE_SHA, HEAD_SHA, plan path. Gets verdict + threadId.
+2. Process results:
    - **APPROVED** → proceed to Step 4
-   - **Critical issues** → fix immediately, re-review
-   - **Important issues** → fix, re-review
-   - **Minor issues** → fix at user's discretion
+   - **NEEDS CHANGES** → dispatch new vibe-implementer with review issues as task,
+     then re-review via codex-reply with same threadId. Repeat until APPROVED.
+
+When NEEDS CHANGES, dispatch a new vibe-implementer:
+
+```
+Task tool (vibe-implementer):
+  description: "Fix code review issues"
+  prompt: |
+    You are fixing issues found during final code review.
+
+    ## Issues to Fix
+    [Paste the NEEDS CHANGES section from Codex review — issues only]
+
+    ## Project Context
+    - Working directory: [absolute path]
+
+    ## Commands
+    - Test: [test command]
+    - Typecheck: [typecheck command]
+    - Lint: [lint command]
+
+    Fix all issues listed above. Do not modify anything else.
+```
 
 ### Step 4: Merge
 
-Present options to user via `AskUserQuestion`:
+Present merge options to user via `AskUserQuestion`.
+
+If user requests changes instead of choosing an option:
+
+1. Dispatch new vibe-implementer with user's change request
+2. Re-review via codex-reply with same threadId from Step 3
+3. APPROVED → present merge options again
+
+Options:
 
 ```
 All tasks complete and review approved. How to proceed?
@@ -135,15 +161,14 @@ git branch -D feature/<plan-name>
 
 ## Red Flags
 
-| Temptation                              | Reality                                                            |
-| --------------------------------------- | ------------------------------------------------------------------ |
-| "Reuse the implementer, it has context" | Context bleed causes drift. Fresh subagent per task. Always.       |
-| "Tests passed, skip the review"         | Tests verify behavior. Review verifies design. Both are needed.    |
-| "Minor issues, just merge"              | Read the issues. Fix Critical and Important before merge.          |
-| "Start on main, branch later"           | Branch first. Uncommitted work on main is a disaster waiting.      |
-| "The implementer said it passed"        | Verify independently if anything seems off. Trust but verify.      |
-| "Let me debug it myself"                | Implementer handles debug internally. Don't duplicate effort.      |
-| "One more debug attempt will work"      | Implementer already tried 2 self-fixes + 2 debug rounds. Escalate. |
+| Temptation                                | Reality                                                            |
+| ----------------------------------------- | ------------------------------------------------------------------ |
+| "Reuse the implementer, it has context"   | Context bleed causes drift. Fresh subagent per task. Always.       |
+| "Tests passed, skip the review"           | Tests verify behavior. Review verifies design. Both are needed.    |
+| "Start on main, branch later"             | Branch first. Uncommitted work on main is a disaster waiting.      |
+| "The implementer said it passed"          | Verify independently if anything seems off. Trust but verify.      |
+| "Let me fix the review issues myself"     | Delegate to vibe-implementer. Main agent stays clean.              |
+| "One more debug attempt will work"        | Implementer already tried 2 self-fixes + 2 debug rounds. Escalate. |
 
 ## Integration
 
@@ -155,4 +180,7 @@ git branch -D feature/<plan-name>
 **Dispatches:**
 
 - vibe-implementer — fresh subagent per task (via Task tool). Implementer handles debug internally via vibe-debug skill.
-- vibe-review — final code review after all tasks
+
+**Invokes:**
+
+- vibe-review — final code review after all tasks (skill via Skill tool)
