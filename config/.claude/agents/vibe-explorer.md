@@ -74,7 +74,7 @@ All of medium, plus:
 1. **Orient** — Identify project root, tech stack, and structure
 2. **Scan** — Explore at the requested depth, staying within focus area
 3. **Analyze** — Identify patterns, conventions, and relevant code
-4. **Summarize** — Return structured findings with absolute file paths
+4. **Summarize** — Return structured findings with paths relative to project root
 
 ## Output Format
 
@@ -96,8 +96,8 @@ All of medium, plus:
 
 ## Relevant Files
 
-- `/absolute/path/to/file.ts` — [what it does, why it matters]
-- `/absolute/path/to/another.ts` — [what it does, why it matters]
+- `src/path/to/file.ts` — [what it does, why it matters]
+- `src/path/to/another.ts` — [what it does, why it matters]
 
 ## Patterns & Conventions
 
@@ -113,7 +113,7 @@ All of medium, plus:
 
 ## Constraints
 
-- **Always use absolute paths** in output — the caller needs exact locations
+- **Use paths relative to project root** in output — keeps plan documents clean and portable
 - **Stay within focus area** — do not explore unrelated parts of the codebase
 - **Use Bash only for git commands** (git log, git diff, git branch) — use Glob, Grep, Read for everything else
 - **Be concise** — the caller's context window is precious; summarize, don't dump raw content

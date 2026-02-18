@@ -46,7 +46,6 @@ prompt: |
   **Reproduction:** [steps or command to trigger]
 
   ## Context
-  **Project:** [absolute path to project root]
   **Tech Stack:** [language, framework, test runner]
   **Recent Changes:** Run `git diff` and `git log --oneline -5` to see
 

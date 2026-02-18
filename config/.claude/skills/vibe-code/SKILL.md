@@ -49,7 +49,6 @@ For each task, in order:
        ## Project Context
        - Tech stack: [from plan header]
        - Conventions: [from codebase knowledge]
-       - Working directory: [absolute path]
 
        ## Commands
        - Test: [test command from plan]
@@ -92,7 +91,6 @@ Task tool (vibe-implementer):
     [Paste the NEEDS CHANGES section from Codex review — issues only]
 
     ## Project Context
-    - Working directory: [absolute path]
 
     ## Commands
     - Test: [test command]
@@ -161,14 +159,14 @@ git branch -D feature/<plan-name>
 
 ## Red Flags
 
-| Temptation                                | Reality                                                            |
-| ----------------------------------------- | ------------------------------------------------------------------ |
-| "Reuse the implementer, it has context"   | Context bleed causes drift. Fresh subagent per task. Always.       |
-| "Tests passed, skip the review"           | Tests verify behavior. Review verifies design. Both are needed.    |
-| "Start on main, branch later"             | Branch first. Uncommitted work on main is a disaster waiting.      |
-| "The implementer said it passed"          | Verify independently if anything seems off. Trust but verify.      |
-| "Let me fix the review issues myself"     | Delegate to vibe-implementer. Main agent stays clean.              |
-| "One more debug attempt will work"        | Implementer already tried 2 self-fixes + 2 debug rounds. Escalate. |
+| Temptation                              | Reality                                                            |
+| --------------------------------------- | ------------------------------------------------------------------ |
+| "Reuse the implementer, it has context" | Context bleed causes drift. Fresh subagent per task. Always.       |
+| "Tests passed, skip the review"         | Tests verify behavior. Review verifies design. Both are needed.    |
+| "Start on main, branch later"           | Branch first. Uncommitted work on main is a disaster waiting.      |
+| "The implementer said it passed"        | Verify independently if anything seems off. Trust but verify.      |
+| "Let me fix the review issues myself"   | Delegate to vibe-implementer. Main agent stays clean.              |
+| "One more debug attempt will work"      | Implementer already tried 2 self-fixes + 2 debug rounds. Escalate. |
 
 ## Integration
 

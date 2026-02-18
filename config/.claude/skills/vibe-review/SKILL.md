@@ -43,7 +43,7 @@ prompt: |
   Review this implementation plan for completeness and quality.
 
   ## File to Read
-  **Plan:** [absolute path to plan file]
+  **Plan:** [plan file path relative to project root, e.g. docs/plans/2025-01-15-auth.md]
 
   Read this file yourself before reviewing. The plan contains the requirements summary in its header.
 
@@ -100,7 +100,7 @@ prompt: |
   [brief description — 1-2 sentences, NOT full plan content]
 
   ## How to See the Changes
-  **Plan file:** [absolute path to plan file] — read this for requirements context
+  **Plan file:** [plan file path, e.g. docs/plans/2025-01-15-auth.md] — read this for requirements context
   **Diff:** Run `git diff --stat {BASE_SHA}..{HEAD_SHA}` and `git diff {BASE_SHA}..{HEAD_SHA}`
 
   Read the plan file and run the diff commands yourself before reviewing.
