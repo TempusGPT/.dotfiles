@@ -1,7 +1,7 @@
 ---
 name: vibe-debug
 description: |
-  This skill should be used when encountering bugs, test failures, or unexpected behavior that needs systematic analysis. Trigger phrases include "debug this", "why is this failing", "investigate this error", "this test is broken", "unexpected behavior". Also triggered automatically by vibe-code when a task fails verification.
+  This skill should be used when encountering bugs, test failures, or unexpected behavior that needs systematic analysis. Trigger phrases include "debug this", "why is this failing", "investigate this error", "this test is broken", "unexpected behavior". Also triggered automatically by vibe-implementer when self-fix attempts are exhausted during task verification.
 ---
 
 # Vibe Debug
@@ -137,7 +137,7 @@ On escalation, present to the user:
 
 **Called by:**
 
-- vibe-code — when a task fails tests/typecheck/lint
+- vibe-implementer — when self-fix attempts (3 strikes) are exhausted during task verification
 - User directly — "debug this", "why is this failing"
 
 **Uses:**

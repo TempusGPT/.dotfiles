@@ -62,10 +62,10 @@ For each task, in order:
 
 4. **Verify** — confirm implementer's reported test/typecheck/lint results. If suspicious, re-run independently.
 
-5. **On failure** — dispatch vibe-debug:
-   - 1st attempt: standard debug
-   - 2nd attempt: more context, different angle
-   - 3rd failure: **STOP**, escalate to user
+5. **On implementer escalation** — the implementer handles debug internally (self-fix 2 strikes → vibe-debug up to 2 attempts). If it escalates:
+   - Review the escalation report (self-fix attempts + debug attempts)
+   - Present findings to user with recommended next steps
+   - **Do not re-dispatch debug yourself** — the implementer already exhausted debug options
 
 6. **Mark completed** via `TaskUpdate`
 
@@ -138,14 +138,15 @@ git branch -D feature/<plan-name>
 
 ## Red Flags
 
-| Temptation                              | Reality                                                         |
-| --------------------------------------- | --------------------------------------------------------------- |
-| "Reuse the implementer, it has context" | Context bleed causes drift. Fresh subagent per task. Always.    |
-| "Tests passed, skip the review"         | Tests verify behavior. Review verifies design. Both are needed. |
-| "Minor issues, just merge"              | Read the issues. Fix Critical and Important before merge.       |
-| "Start on main, branch later"           | Branch first. Uncommitted work on main is a disaster waiting.   |
-| "The implementer said it passed"        | Verify independently if anything seems off. Trust but verify.   |
-| "Debug attempt 4 will work"             | 3 strikes = escalate. Stale loops waste time.                   |
+| Temptation                              | Reality                                                            |
+| --------------------------------------- | ------------------------------------------------------------------ |
+| "Reuse the implementer, it has context" | Context bleed causes drift. Fresh subagent per task. Always.       |
+| "Tests passed, skip the review"         | Tests verify behavior. Review verifies design. Both are needed.    |
+| "Minor issues, just merge"              | Read the issues. Fix Critical and Important before merge.          |
+| "Start on main, branch later"           | Branch first. Uncommitted work on main is a disaster waiting.      |
+| "The implementer said it passed"        | Verify independently if anything seems off. Trust but verify.      |
+| "Let me debug it myself"                | Implementer handles debug internally. Don't duplicate effort.      |
+| "One more debug attempt will work"      | Implementer already tried 2 self-fixes + 2 debug rounds. Escalate. |
 
 ## Integration
 
@@ -156,6 +157,5 @@ git branch -D feature/<plan-name>
 
 **Dispatches:**
 
-- vibe-implementer — fresh subagent per task (via Task tool)
-- vibe-debug — on verification failures
+- vibe-implementer — fresh subagent per task (via Task tool). Implementer handles debug internally via vibe-debug skill.
 - vibe-review — final code review after all tasks

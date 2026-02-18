@@ -88,38 +88,88 @@ Run each command and confirm clean output:
 {LINT_COMMAND}
 ```
 
-**All three must pass.** If any fails, apply the **3-Strike Rule:**
+**All three must pass.** If any fails, proceed to 3a. If all pass, skip to step 4.
+
+### 3a. SELF-FIX — 2-Strike Rule
 
 1. Analyze the failure, attempt fix #1 → re-run verification
 2. Still failing? Attempt fix #2 → re-run verification
-3. Still failing? Attempt fix #3 → re-run verification
-4. **Still failing? STOP. Do not attempt fix #4.**
+3. **Still failing? Do not attempt fix #3.** Proceed to 3b.
 
-Report back immediately with the failure report:
+### 3b. DEBUG — Invoke vibe-debug
+
+When self-fix attempts are exhausted, invoke the `vibe-debug` skill directly. You have the freshest context about the failure — use it.
+
+**Debug attempt 1:**
+
+Invoke vibe-debug via the Skill tool with a detailed bug report:
+
+```
+Skill: vibe-debug
+
+Debug this verification failure.
+
+## Bug Report
+**Symptom:** [what's failing — test, typecheck, or lint]
+**Error:** [exact error message / stack trace]
+**Reproduction:** [command that triggers the failure]
+
+## Context
+**Project:** [working directory]
+**Tech Stack:** [language, framework, test runner]
+**What I tried:**
+- Fix 1: [what was tried, what happened]
+- Fix 2: [what was tried, what happened]
+**Relevant Files:** [list of files involved]
+**Recent Changes:** [git diff summary of your changes]
+```
+
+After receiving the debug analysis:
+
+1. Verify the root cause analysis makes sense against the evidence
+2. Apply the proposed fix
+3. Re-run full verification (tests, typecheck, lint)
+4. If all pass → continue to SELF-REVIEW
+
+**Debug attempt 2 (if first debug fix didn't work):**
+
+Re-invoke vibe-debug with updated context:
+
+- What the first debug attempt proposed
+- Why it didn't work
+- New error output after applying the fix
+
+**After 2 failed debug attempts → STOP. Escalate to user.**
+
+Report back immediately with the escalation report:
 
 ```markdown
-## Task {TASK_NUMBER}: {TASK_NAME} — Failed (3 strikes)
+## Task {TASK_NUMBER}: {TASK_NAME} — Escalated
 
-### What Was Attempted
+### Self-Fix Attempts (2 strikes)
 
 - Fix 1: [what was tried, what happened]
 - Fix 2: [what was tried, what happened]
-- Fix 3: [what was tried, what happened]
+
+### Debug Attempts
+
+- Debug 1: [root cause proposed, fix applied, result]
+- Debug 2: [root cause proposed, fix applied, result]
 
 ### Last Error
 
 [exact error message / test output]
 
-### Root Cause Hypothesis
+### What Remains Unclear
 
-[best guess based on 3 attempts]
+[what could not be determined]
 
 ### Files Changed
 
 - `path/to/file` — [what changed]
 ```
 
-The orchestrator will decide next steps (vibe-debug or escalation). Do not keep trying.
+Do not attempt a third debug cycle. Escalate to the orchestrator.
 
 ### 4. SELF-REVIEW
 
@@ -165,6 +215,12 @@ Commit only the files you changed. Use conventional commit types: `feat`, `fix`,
 - Tests: [X passing, 0 failing]
 - Typecheck: [clean / N/A]
 - Lint: [clean / N/A]
+
+### Debug Summary
+
+- Self-fix attempts: [0-2]
+- vibe-debug invocations: [0-2, or "None"]
+- [If debug was used: brief description of root cause found]
 
 ### Files Changed
 
