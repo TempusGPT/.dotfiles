@@ -65,7 +65,7 @@ Use the right tool for the job:
 
 ## Research Guidelines
 
-- **Include the current year (2026) in search queries** to avoid outdated results
+- **Include the current year in search queries** to avoid outdated results
 - **Prefer official documentation** over blog posts or tutorials
 - **Note version numbers** for all libraries and APIs mentioned
 - **Flag uncertainty** — if sources conflict, say so explicitly

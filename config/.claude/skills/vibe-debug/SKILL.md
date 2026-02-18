@@ -108,36 +108,21 @@ git branch -d debug/<issue>
 
 Never leave worktrees behind. Clean up even if the debug session was unsuccessful.
 
-## Escalation
-
-| Attempt            | Action                                |
-| ------------------ | ------------------------------------- |
-| 1st dispatch       | Standard analysis with full context   |
-| 2nd dispatch       | Add more context, try different angle |
-| 3rd dispatch fails | **STOP.** Escalate to user            |
-
-On escalation, present to the user:
-
-- What was investigated
-- What Codex found (partial findings)
-- What remains unclear
-- Suggested next steps for manual investigation
-
 ## Red Flags
 
-| Temptation                         | Reality                                                  |
-| ---------------------------------- | -------------------------------------------------------- |
-| "Just try this fix and see"        | Root cause first. Symptom fixes create new bugs.         |
-| "Codex said it, must be right"     | Verify every claim against actual code.                  |
-| "Skip the worktree, it's quick"    | If Codex needs to modify files, isolate. Always.         |
-| "I'll clean up the worktree later" | Later never comes. Clean up now.                         |
-| "One more attempt will solve it"   | 3 strikes = escalate. Fresh human eyes beat stale loops. |
+| Temptation                         | Reality                                                      |
+| ---------------------------------- | ------------------------------------------------------------ |
+| "Just try this fix and see"        | Root cause first. Symptom fixes create new bugs.             |
+| "Codex said it, must be right"     | Verify every claim against actual code.                      |
+| "Skip the worktree, it's quick"    | If Codex needs to modify files, isolate. Always.             |
+| "I'll clean up the worktree later" | Later never comes. Clean up now.                             |
+| "One more attempt will solve it"   | Limit reached = escalate. Fresh human eyes beat stale loops. |
 
 ## Integration
 
 **Called by:**
 
-- vibe-implementer — when self-fix attempts (3 strikes) are exhausted during task verification
+- vibe-implementer — when self-fix attempts (2 strikes) are exhausted during task verification
 - User directly — "debug this", "why is this failing"
 
 **Uses:**
