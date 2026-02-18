@@ -25,9 +25,8 @@ Before calling Codex, collect concrete evidence:
 1. **Error message** — exact text, stack trace, exit code
 2. **Reproduction** — steps or command to trigger the bug
 3. **Recent changes** — `git diff` and `git log --oneline -5`
-4. **Relevant files** — paths to files involved in the failure
 
-Collect concise evidence. **Do NOT read file contents to paste into the prompt** — gather paths and error messages only.
+Collect concise evidence. **Do NOT read file contents or list file paths to paste into the prompt.** Codex has full filesystem access and will find relevant files from the error message, stack trace, and git diff.
 
 ### Step 2: Dispatch to Codex
 
@@ -50,11 +49,12 @@ prompt: |
   **Project:** [absolute path to project root]
   **Tech Stack:** [language, framework, test runner]
   **Recent Changes:** Run `git diff` and `git log --oneline -5` to see
-  **Relevant Files:** [list of file PATHS only — do NOT paste file contents]
+
+  Do NOT list file paths. Codex has full filesystem access and will find relevant files
+  from the error message, stack trace, and git diff.
 
   ## Instructions
-  1. Read the relevant files yourself using shell commands
-  2. Read the error carefully — what is it actually telling you?
+  1. Read the error carefully — what is it actually telling you?
   3. Trace data flow backward from the error to the source
   4. Identify the root cause (not the symptom)
   5. Propose ONE specific fix with exact file:line references
