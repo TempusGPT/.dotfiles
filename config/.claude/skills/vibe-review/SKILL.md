@@ -12,6 +12,8 @@ Delegate review to Codex MCP for independent assessment. Different prompt templa
 
 **Critical: Codex has full shell and file access.** Never paste file contents, diffs, or plan documents into the prompt. Provide file paths and git commands — Codex reads them itself. This avoids bloating the prompt with thousands of lines of source code.
 
+DO NOT add file paths, directory listings, or any other context beyond what the prompt templates below specify. Codex finds what it needs from the plan file and git diff.
+
 ## Determine Review Type
 
 | Signal                                   | Review Type     |
@@ -48,12 +50,11 @@ prompt: |
   ## Review Criteria
   1. **Completeness** — Does the plan cover ALL requirements? Any gaps?
   2. **Task Granularity** — Are tasks bite-sized (2-5 min each)? Any too large?
-  3. **TDD Compliance** — Does each task follow red-green-refactor?
-  4. **File Paths** — Are all file paths exact and verifiable?
-  5. **Commands** — Are all commands complete with expected output?
-  6. **YAGNI** — Any over-engineering or unnecessary features?
-  7. **Ordering** — Are tasks in logical order? Dependencies respected?
-  8. **Edge Cases** — Are error handling and edge cases covered?
+  3. **File Paths** — Are all file paths exact and verifiable?
+  4. **Commands** — Are all commands complete with expected output?
+  5. **YAGNI** — Any over-engineering or unnecessary features?
+  6. **Ordering** — Are tasks in logical order? Dependencies respected?
+  7. **Edge Cases** — Are error handling and edge cases covered?
 
   ## Output Format
   ### Verdict: [APPROVED / NEEDS CHANGES]
@@ -85,8 +86,7 @@ sandbox: "read-only"
    BASE_SHA=$(git merge-base HEAD main)
    HEAD_SHA=$(git rev-parse HEAD)
    ```
-2. Read the plan document the code implements
-3. Collect test results summary
+2. Note the plan file path (do NOT read or paste its contents)
 
 ### Dispatch to Codex
 
@@ -152,7 +152,16 @@ sandbox: "read-only"
 - Important issues should be fixed before proceeding
 - Minor issues are at the caller's discretion
 
-For continued discussion, use `mcp__codex__codex-reply` with the `threadId` from the initial response.
+## Re-Review After Changes
+
+When issues have been fixed and need re-review:
+
+1. Use `mcp__codex__codex-reply` with the threadId from the initial review
+2. Prompt: "Issues have been addressed. Please re-review. Changes: [brief description of what was fixed]"
+3. Process results the same way (APPROVED or NEEDS CHANGES)
+
+NEVER open a new Codex session (`mcp__codex__codex`) for re-review.
+The existing thread has full context of what was reviewed and what issues were found.
 
 ## Red Flags
 
