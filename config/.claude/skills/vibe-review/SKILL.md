@@ -10,6 +10,8 @@ Delegate review to Codex MCP for independent assessment. Different prompt templa
 
 **Core principle:** A fresh model catches what the author misses.
 
+**Critical: Codex has full shell and file access.** Never paste file contents, diffs, or plan documents into the prompt. Provide file paths and git commands — Codex reads them itself. This avoids bloating the prompt with thousands of lines of source code.
+
 ## Determine Review Type
 
 | Signal                                   | Review Type     |
@@ -27,9 +29,8 @@ Delegate review to Codex MCP for independent assessment. Different prompt templa
 
 ### Gather Context
 
-1. Read the plan document in full
-2. Read the requirements document it implements (if referenced)
-3. Note the project's tech stack
+1. Note the **file path** to the plan document (do NOT read it — Codex reads it itself)
+2. Note the project's tech stack
 
 ### Dispatch to Codex
 
@@ -39,11 +40,10 @@ Call `mcp__codex__codex`:
 prompt: |
   Review this implementation plan for completeness and quality.
 
-  ## Plan Document
-  [full plan content]
+  ## File to Read
+  **Plan:** [absolute path to plan file]
 
-  ## Requirements
-  [requirements content, or "No separate requirements document"]
+  Read this file yourself before reviewing. The plan contains the requirements summary in its header.
 
   ## Review Criteria
   1. **Completeness** — Does the plan cover ALL requirements? Any gaps?
@@ -97,15 +97,13 @@ prompt: |
   Review these code changes for production readiness.
 
   ## What Was Implemented
-  [brief description]
+  [brief description — 1-2 sentences, NOT full plan content]
 
-  ## Plan Reference
-  [plan content or summary]
+  ## How to See the Changes
+  **Plan file:** [absolute path to plan file] — read this for requirements context
+  **Diff:** Run `git diff --stat {BASE_SHA}..{HEAD_SHA}` and `git diff {BASE_SHA}..{HEAD_SHA}`
 
-  ## Review Instructions
-  Run these commands to see the changes:
-  git diff --stat {BASE_SHA}..{HEAD_SHA}
-  git diff {BASE_SHA}..{HEAD_SHA}
+  Read the plan file and run the diff commands yourself before reviewing.
 
   ## Review Criteria
   **Plan Alignment:**

@@ -27,9 +27,11 @@ Before calling Codex, collect concrete evidence:
 3. **Recent changes** — `git diff` and `git log --oneline -5`
 4. **Relevant files** — paths to files involved in the failure
 
-Insufficient context produces useless analysis. Spend 2 minutes gathering before dispatching.
+Collect concise evidence. **Do NOT read file contents to paste into the prompt** — gather paths and error messages only.
 
 ### Step 2: Dispatch to Codex
+
+**Critical: Codex has full shell and file access.** Never paste file contents or diff output into the prompt. Provide file paths and commands — Codex reads them itself.
 
 Call `mcp__codex__codex` with the debug prompt template:
 
@@ -41,24 +43,22 @@ prompt: |
 
   ## Bug Report
   **Symptom:** [description of what's wrong]
-  **Error:** [exact error message]
-  **Stack Trace:** [if available]
-  **Reproduction:** [steps or command]
+  **Error:** [exact error message — this is the ONE thing to paste, not file contents]
+  **Reproduction:** [steps or command to trigger]
 
   ## Context
   **Project:** [absolute path to project root]
   **Tech Stack:** [language, framework, test runner]
-  **Recent Changes:**
-  [git diff output or summary]
-  **Relevant Files:**
-  [list of file paths involved]
+  **Recent Changes:** Run `git diff` and `git log --oneline -5` to see
+  **Relevant Files:** [list of file PATHS only — do NOT paste file contents]
 
   ## Instructions
-  1. Read the error carefully — what is it actually telling you?
-  2. Trace data flow backward from the error to the source
-  3. Identify the root cause (not the symptom)
-  4. Propose ONE specific fix with exact file:line references
-  5. Explain how to verify the fix works
+  1. Read the relevant files yourself using shell commands
+  2. Read the error carefully — what is it actually telling you?
+  3. Trace data flow backward from the error to the source
+  4. Identify the root cause (not the symptom)
+  5. Propose ONE specific fix with exact file:line references
+  6. Explain how to verify the fix works
 
   Do NOT propose multiple speculative fixes.
   If you cannot determine root cause, say so and explain what you investigated.

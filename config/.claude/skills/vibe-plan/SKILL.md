@@ -1,7 +1,7 @@
 ---
 name: vibe-plan
 description: |
-  This skill should be used when requirements exist and an implementation plan needs to be written before coding. Trigger phrases include "write a plan", "create implementation plan", "plan this feature", "break this into tasks". Also triggered by vibe-spec after requirements are approved, or invocable directly when the user already has a requirements document.
+  This skill should be used when requirements exist and an implementation plan needs to be written before coding. Trigger phrases include "write a plan", "create implementation plan", "plan this feature", "break this into tasks". Also triggered by vibe-spec after requirements are approved, or invocable directly when the user already has confirmed requirements.
 ---
 
 # Vibe Plan
@@ -15,7 +15,7 @@ NO PLAN WITHOUT REQUIREMENTS
 NO CODE WITHOUT APPROVED PLAN
 ```
 
-Read the requirements document before writing. Do not invoke vibe-code until the plan is reviewed and the user approves.
+Confirm requirements are agreed upon before writing. Do not invoke vibe-code until the plan is reviewed and the user approves.
 
 ## Plan Document Format
 
@@ -27,7 +27,7 @@ Save to: `docs/plans/YYYY-MM-DD-<feature>.md`
 > **For Claude:** Use vibe-code to implement this plan task-by-task.
 
 **Goal:** [one sentence]
-**Requirements:** [summarized from vibe-spec or user input]
+**Requirements:** [summarized from vibe-spec conversation or user input]
 **Architecture:** [2-3 sentences on approach]
 **Tech Stack:** [key technologies]
 **Branch:** `feature/<feature-name>`
@@ -76,9 +76,9 @@ Each step within a task = one action:
 
 ## Process
 
-### Step 1: Read Requirements
+### Step 1: Confirm Requirements
 
-Read the requirements document. If none exists, stop and invoke vibe-spec first.
+Requirements come from the vibe-spec conversation (not a saved file). If requirements have not been confirmed by the user, stop and invoke vibe-spec first.
 
 ### Step 2: Explore Codebase
 
@@ -97,7 +97,7 @@ Task tool (vibe-explorer):
 
 ### Step 3: Research (If Needed)
 
-Dispatch **vibe-researcher** for unresolved technical questions from requirements.
+Dispatch **vibe-researcher** for unresolved technical questions from the agreed requirements.
 
 ### Step 4: Write Plan
 
@@ -136,7 +136,7 @@ Follow the plan document format above. For every task:
 **Called by:**
 
 - vibe-spec — after requirements approved
-- User directly — with existing requirements
+- User directly — with confirmed requirements
 
 **Dispatches:**
 
