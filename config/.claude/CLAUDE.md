@@ -9,7 +9,6 @@ This file provides global guidance to Claude Code (claude.ai/code) across all pr
 
 ## Search Rules
 
-- Always check available skills and tools before falling back to web search.
 - Always use web search if the answer could change within the next 10 years.
 - Include the current date or year in queries to avoid outdated information.
 - Cross-verify with at least 10 queries to ensure information is up to date.

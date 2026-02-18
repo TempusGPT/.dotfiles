@@ -1,18 +1,15 @@
-# Install official plugins
-claude plugin install superpowers
-claude plugin install typescript-lsp
-claude plugin install rust-analyzer-lsp
+# Install plugins
 claude plugin install frontend-design
+claude plugin install rust-analyzer-lsp
+claude plugin install typescript-lsp
 
-# Install context7 plugin
-claude plugin marketplace add upstash/context7
-plugin install context7-plugin@context7-marketplace
-
-# Install codex MCP
-claude mcp add codex --scope user codex mcp-server
+# Install MCP servers
+claude mcp add codex -s user codex mcp-server
+claude mcp add context7 -s user -t http https://mcp.context7.com/mcp
 
 # Symlink configuration files
 mkdir -p ~/.claude
+ln -snf ~/.dotfiles/config/.claude/agents ~/.claude/agents
 ln -snf ~/.dotfiles/config/.claude/skills ~/.claude/skills
 ln -snf ~/.dotfiles/config/.claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -snf ~/.dotfiles/config/.claude/settings.json ~/.claude/settings.json

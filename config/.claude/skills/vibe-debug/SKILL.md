@@ -1,0 +1,143 @@
+---
+name: vibe-debug
+description: |
+  This skill should be used when encountering bugs, test failures, or unexpected behavior that needs systematic analysis. Trigger phrases include "debug this", "why is this failing", "investigate this error", "this test is broken", "unexpected behavior". Also triggered automatically by vibe-code when a task fails verification.
+---
+
+# Vibe Debug
+
+Delegate bug analysis to Codex MCP for isolated, systematic investigation. Codex debugs in a sandbox; integrate the findings after verification.
+
+## Iron Law
+
+```
+NO FIX WITHOUT VERIFIED ROOT CAUSE
+```
+
+Never apply a fix based on speculation. Codex proposes, evidence confirms.
+
+## Process
+
+### Step 1: Gather Context
+
+Before calling Codex, collect concrete evidence:
+
+1. **Error message** — exact text, stack trace, exit code
+2. **Reproduction** — steps or command to trigger the bug
+3. **Recent changes** — `git diff` and `git log --oneline -5`
+4. **Relevant files** — paths to files involved in the failure
+
+Insufficient context produces useless analysis. Spend 2 minutes gathering before dispatching.
+
+### Step 2: Create Worktree (Optional)
+
+If Codex needs to experiment (modify files, run tests), create an isolated worktree:
+
+```bash
+git worktree add .worktrees/debug-<issue> -b debug/<issue>
+```
+
+If analysis-only (read code, trace logic): skip worktree, use `sandbox: "read-only"`.
+
+Verify `.worktrees` is in `.gitignore` before creating. If not, add it first.
+
+### Step 3: Dispatch to Codex
+
+Call `mcp__codex__codex` with the debug prompt template:
+
+```
+prompt: |
+  Analyze this bug systematically. Find the root cause before proposing any fix.
+
+  ## Bug Report
+  **Symptom:** [description of what's wrong]
+  **Error:** [exact error message]
+  **Stack Trace:** [if available]
+  **Reproduction:** [steps or command]
+
+  ## Context
+  **Project:** [absolute path to project root]
+  **Tech Stack:** [language, framework, test runner]
+  **Recent Changes:**
+  [git diff output or summary]
+  **Relevant Files:**
+  [list of file paths involved]
+
+  ## Instructions
+  1. Read the error carefully — what is it actually telling you?
+  2. Trace data flow backward from the error to the source
+  3. Identify the root cause (not the symptom)
+  4. Propose ONE specific fix with exact file:line references
+  5. Explain how to verify the fix works
+
+  Do NOT propose multiple speculative fixes.
+  If you cannot determine root cause, say so and explain what you investigated.
+
+cwd: [worktree path or project root]
+sandbox: "read-only"
+```
+
+To continue an existing Codex session with additional context, use `mcp__codex__codex-reply` with the `threadId` from the initial response.
+
+### Step 4: Evaluate Results
+
+**Codex identifies root cause:**
+
+1. Verify the analysis matches the evidence — do not trust blindly
+2. Check the proposed fix against the codebase (does the file:line exist? is the logic sound?)
+3. Apply the fix in the main workspace (not the worktree)
+4. Run verification: tests, typecheck, lint
+
+**Codex analysis is insufficient:**
+
+1. Add more context (broader git diff, related files, logs)
+2. Re-dispatch with `mcp__codex__codex-reply` on the same thread
+3. Try a different angle (ask about a specific hypothesis)
+
+### Step 5: Cleanup
+
+If a worktree was created:
+
+```bash
+git worktree remove .worktrees/debug-<issue>
+git branch -d debug/<issue>
+```
+
+Never leave worktrees behind. Clean up even if the debug session was unsuccessful.
+
+## Escalation
+
+| Attempt            | Action                                |
+| ------------------ | ------------------------------------- |
+| 1st dispatch       | Standard analysis with full context   |
+| 2nd dispatch       | Add more context, try different angle |
+| 3rd dispatch fails | **STOP.** Escalate to user            |
+
+On escalation, present to the user:
+
+- What was investigated
+- What Codex found (partial findings)
+- What remains unclear
+- Suggested next steps for manual investigation
+
+## Red Flags
+
+| Temptation                         | Reality                                                  |
+| ---------------------------------- | -------------------------------------------------------- |
+| "Just try this fix and see"        | Root cause first. Symptom fixes create new bugs.         |
+| "Codex said it, must be right"     | Verify every claim against actual code.                  |
+| "Skip the worktree, it's quick"    | If Codex needs to modify files, isolate. Always.         |
+| "I'll clean up the worktree later" | Later never comes. Clean up now.                         |
+| "One more attempt will solve it"   | 3 strikes = escalate. Fresh human eyes beat stale loops. |
+
+## Integration
+
+**Called by:**
+
+- vibe-code — when a task fails tests/typecheck/lint
+- User directly — "debug this", "why is this failing"
+
+**Uses:**
+
+- `mcp__codex__codex` — dispatch Codex analysis session
+- `mcp__codex__codex-reply` — continue existing session
