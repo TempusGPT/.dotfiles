@@ -17,6 +17,12 @@ NO CODE WITHOUT APPROVED PLAN
 
 Confirm requirements are agreed upon before writing. Do not invoke vibe-code until the plan is reviewed and the user approves.
 
+## Tool Restrictions
+
+NEVER use the ExitPlanMode or EnterPlanMode tools.
+This skill has nothing to do with Claude Code's built-in plan mode.
+Vibe-plan manages its own workflow — writing a plan document, not entering/exiting a mode.
+
 ## Plan Document Format
 
 Save to: `docs/plans/YYYY-MM-DD-<feature>.md`
@@ -101,7 +107,8 @@ Dispatch **vibe-researcher** for unresolved technical questions from the agreed 
 
 ### Step 4: Write Plan
 
-Follow the plan document format above. For every task:
+Save plan document to `docs/plans/YYYY-MM-DD-<feature>.md` (create directory if needed).
+Follow the Plan Document Format above. For every task:
 
 - **Exact file paths** — no "somewhere in src/"
 - **Complete code** — no "add appropriate validation"
@@ -109,16 +116,21 @@ Follow the plan document format above. For every task:
 
 ### Step 5: Review
 
-1. Present plan to user for review
-2. Dispatch **vibe-review** (plan review mode) for independent assessment
-3. Incorporate feedback from both
-4. Get user's final approval
+1. Invoke vibe-review skill (plan review mode) — call Codex, get verdict + threadId
+2. If NEEDS CHANGES: fix issues, re-review via codex-reply with same threadId
+3. Repeat until APPROVED
+4. Present plan to user for final approval
+5. If user requests changes: apply changes, re-review via codex-reply
 
-### Step 6: Handoff
+### Step 6: Create Feature Branch and Commit
 
-1. Save to `docs/plans/` (create directory if needed)
-2. Commit: `git add docs/plans/... && git commit -m "docs: add <feature> implementation plan"`
-3. Transition: "Plan approved. Invoke vibe-code to start implementation?"
+1. Create feature branch: `git checkout -b feature/<feature-name>`
+2. Commit plan: `git add docs/plans/... && git commit -m "docs: add <feature> implementation plan"`
+3. Verify: `git log -1` shows the plan commit on the feature branch
+
+### Step 7: Handoff
+
+Transition: "Plan approved and committed on `feature/<feature-name>`. Invoke vibe-code to start implementation?"
 
 ## Red Flags
 
@@ -140,9 +152,12 @@ Follow the plan document format above. For every task:
 
 **Dispatches:**
 
-- vibe-explorer — deep codebase analysis for planning
-- vibe-researcher — tech research for planning
-- vibe-review — plan review before approval
+- vibe-explorer — deep codebase analysis for planning (subagent via Task tool)
+- vibe-researcher — tech research for planning (subagent via Task tool)
+
+**Invokes:**
+
+- vibe-review — plan review before approval (skill via Skill tool)
 
 **Transitions to:**
 
