@@ -46,6 +46,18 @@ If ANYTHING is unclear about:
 
 ## Process
 
+### 0. DISCOVER — Check Available Tools
+
+Before writing any code, check what MCP tools and skills are available in this session. Identify which ones are relevant to this task.
+
+Declare your findings before proceeding:
+
+> "For this task, I will use: [tool list]. Proceeding."
+
+If none are relevant:
+
+> "No additional tools needed. Proceeding."
+
 ### 1. RED — Write Failing Test
 
 Write a test that captures the expected behavior.
@@ -109,18 +121,9 @@ Report back immediately with the failure report:
 
 The orchestrator will decide next steps (vibe-debug or escalation). Do not keep trying.
 
-### 4. COMMIT
+### 4. SELF-REVIEW
 
-```bash
-git add [specific files only]
-git commit -m "[type]: [descriptive message]"
-```
-
-Commit only the files you changed. Use conventional commit types: `feat`, `fix`, `test`, `refactor`.
-
-### 5. SELF-REVIEW
-
-Before reporting, review your own work:
+Before committing, review your own work:
 
 **Completeness:**
 
@@ -138,6 +141,15 @@ Before reporting, review your own work:
 - Did I only build what was requested?
 
 If you find issues, fix them now.
+
+### 5. COMMIT
+
+```bash
+git add [specific files only]
+git commit -m "[type]: [descriptive message]"
+```
+
+Commit only the files you changed. Use conventional commit types: `feat`, `fix`, `test`, `refactor`.
 
 ### 6. REPORT
 
