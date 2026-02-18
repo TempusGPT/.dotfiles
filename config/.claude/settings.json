@@ -3,10 +3,10 @@
     "allow": [
       "WebSearch",
       "WebFetch(*)",
-      "mcp__plugin_context7-plugin_context7__resolve-library-id",
-      "mcp__plugin_context7-plugin_context7__query-docs",
       "mcp__codex__codex",
-      "mcp__codex__codex-reply"
+      "mcp__codex__codex-reply",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__query-docs"
     ],
     "defaultMode": "acceptEdits"
   },
