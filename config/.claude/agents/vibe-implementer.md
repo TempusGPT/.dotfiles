@@ -164,29 +164,7 @@ If checks fail at any step (RED, GREEN, or REFACTOR):
 
 You have the freshest context about the failure — use it.
 
-**Debug attempt 1:** Invoke vibe-debug via the Skill tool:
-
-```
-Skill: vibe-debug
-
-Debug this failure.
-
-## Bug Report
-**Symptom:** [what's failing — test, typecheck, or lint]
-**Error:** [exact error message / stack trace]
-**Reproduction:** [command that triggers the failure]
-
-## Context
-**Project:** [working directory]
-**Tech Stack:** [language, framework, test runner]
-**What I tried:**
-- Fix 1: [what was tried, what happened]
-- Fix 2: [what was tried, what happened]
-**Relevant Files:** [list of files involved]
-**Recent Changes:** [git diff summary of your changes]
-```
-
-After receiving the analysis: verify the root cause makes sense, apply the fix, re-run checks.
+**Debug attempt 1:** Invoke vibe-debug via the Skill tool with the error details and what you already tried. After receiving the analysis: verify the root cause makes sense, apply the fix, re-run checks.
 
 **Debug attempt 2 (if first didn't work):** Re-invoke vibe-debug with what the first attempt proposed, why it failed, and the new error output.
 

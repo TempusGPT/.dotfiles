@@ -29,25 +29,15 @@ Before calling Codex, collect concrete evidence:
 
 Insufficient context produces useless analysis. Spend 2 minutes gathering before dispatching.
 
-### Step 2: Create Worktree (Optional)
-
-If Codex needs to experiment (modify files, run tests), create an isolated worktree:
-
-```bash
-git worktree add .worktrees/debug-<issue> -b debug/<issue>
-```
-
-If analysis-only (read code, trace logic): skip worktree.
-
-Verify `.worktrees` is in `.gitignore` before creating. If not, add it first.
-
-### Step 3: Dispatch to Codex
+### Step 2: Dispatch to Codex
 
 Call `mcp__codex__codex` with the debug prompt template:
 
 ```
 prompt: |
   Analyze this bug systematically. Find the root cause before proposing any fix.
+  If you need to experiment (modify files, run tests), create a worktree first.
+  NEVER modify files outside the worktree. Clean up the worktree when done.
 
   ## Bug Report
   **Symptom:** [description of what's wrong]
@@ -73,16 +63,13 @@ prompt: |
   Do NOT propose multiple speculative fixes.
   If you cannot determine root cause, say so and explain what you investigated.
 
-cwd: [worktree path or project root]
-sandbox: "read-only"           # analysis-only (no worktree)
-sandbox: "workspace-write"     # when using worktree (Codex can experiment)
+cwd: [project root]
+sandbox: "workspace-write"
 ```
-
-Choose the appropriate sandbox mode based on Step 2.
 
 To continue an existing Codex session with additional context, use `mcp__codex__codex-reply` with the `threadId` from the initial response.
 
-### Step 4: Evaluate Results
+### Step 3: Evaluate Results
 
 **Codex identifies root cause:**
 
@@ -97,26 +84,13 @@ To continue an existing Codex session with additional context, use `mcp__codex__
 2. Re-dispatch with `mcp__codex__codex-reply` on the same thread
 3. Try a different angle (ask about a specific hypothesis)
 
-### Step 5: Cleanup
-
-If a worktree was created:
-
-```bash
-git worktree remove .worktrees/debug-<issue>
-git branch -d debug/<issue>
-```
-
-Never leave worktrees behind. Clean up even if the debug session was unsuccessful.
-
 ## Red Flags
 
-| Temptation                         | Reality                                                      |
-| ---------------------------------- | ------------------------------------------------------------ |
-| "Just try this fix and see"        | Root cause first. Symptom fixes create new bugs.             |
-| "Codex said it, must be right"     | Verify every claim against actual code.                      |
-| "Skip the worktree, it's quick"    | If Codex needs to modify files, isolate. Always.             |
-| "I'll clean up the worktree later" | Later never comes. Clean up now.                             |
-| "One more attempt will solve it"   | Limit reached = escalate. Fresh human eyes beat stale loops. |
+| Temptation                       | Reality                                                      |
+| -------------------------------- | ------------------------------------------------------------ |
+| "Just try this fix and see"      | Root cause first. Symptom fixes create new bugs.             |
+| "Codex said it, must be right"   | Verify every claim against actual code.                      |
+| "One more attempt will solve it" | Limit reached = escalate. Fresh human eyes beat stale loops. |
 
 ## Integration
 

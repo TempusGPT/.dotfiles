@@ -14,7 +14,7 @@ Turn ideas into refined requirements through interactive brainstorming. Explore 
 NO IMPLEMENTATION WITHOUT APPROVED REQUIREMENTS
 ```
 
-Do not invoke vibe-plan, vibe-code, or write any production code until the requirements document is written and the user approves it.
+Do not invoke vibe-plan, vibe-code, or write any production code until the requirements are confirmed by the user.
 
 ## Process
 
@@ -88,33 +88,27 @@ Propose **2-3 approaches** with trade-offs:
 
 Lead with the recommended option and explain why. Get the user's choice before proceeding.
 
-### Phase 5: Requirements Document
+### Phase 5: Summarize and Transition
 
-Present the document **section by section**, getting approval after each:
+Summarize the agreed requirements concisely:
 
 1. **Goal** — one sentence
 2. **Scope** — what is and is NOT included
 3. **Requirements** — numbered, each testable and verifiable
-4. **Non-functional requirements** — performance, security, accessibility
-5. **Tech decisions** — chosen libraries/patterns with rationale
-6. **Success criteria** — how to verify the feature works end-to-end
+4. **Tech decisions** — chosen libraries/patterns with rationale (if any)
 
-### Phase 6: Handoff
-
-1. Save to `docs/plans/YYYY-MM-DD-<topic>-requirements.md` (create `docs/plans/` if needed)
-2. Commit: `git add docs/plans/... && git commit -m "docs: add <topic> requirements"`
-3. Transition: "Requirements approved. Invoke vibe-plan to create the implementation plan?"
+Get user confirmation, then transition: "Requirements confirmed. Invoke vibe-plan to create the implementation plan?"
 
 ## Key Principles
 
-| Principle                 | In Practice                                                 |
-| ------------------------- | ----------------------------------------------------------- |
-| One question at a time    | Never batch questions. Wait for answer before next.         |
-| Multiple choice preferred | Use `AskUserQuestion` with 2-4 concrete options.            |
-| YAGNI ruthlessly          | "Do we actually need this for v1?" Challenge every feature. |
-| Explore before asking     | Dispatch vibe-explorer first. Ask informed questions.       |
-| Incremental validation    | Present requirements section by section, not all at once.   |
-| Research before deciding  | Dispatch vibe-researcher for tech decisions. Don't guess.   |
+| Principle                  | In Practice                                                 |
+| -------------------------- | ----------------------------------------------------------- |
+| One question at a time     | Never batch questions. Wait for answer before next.         |
+| Multiple choice preferred  | Use `AskUserQuestion` with 2-4 concrete options.            |
+| YAGNI ruthlessly           | "Do we actually need this for v1?" Challenge every feature. |
+| Explore before asking      | Dispatch vibe-explorer first. Ask informed questions.       |
+| Summarize before moving on | Confirm requirements with user before invoking vibe-plan.   |
+| Research before deciding   | Dispatch vibe-researcher for tech decisions. Don't guess.   |
 
 ## Integration
 

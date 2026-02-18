@@ -19,7 +19,7 @@ Read the requirements document before writing. Do not invoke vibe-code until the
 
 ## Plan Document Format
 
-Save to: `docs/plans/YYYY-MM-DD-<feature>-plan.md`
+Save to: `docs/plans/YYYY-MM-DD-<feature>.md`
 
 ```markdown
 # [Feature Name] Implementation Plan
@@ -27,7 +27,7 @@ Save to: `docs/plans/YYYY-MM-DD-<feature>-plan.md`
 > **For Claude:** Use vibe-code to implement this plan task-by-task.
 
 **Goal:** [one sentence]
-**Requirements:** See `docs/plans/YYYY-MM-DD-<topic>-requirements.md`
+**Requirements:** [summarized from vibe-spec or user input]
 **Architecture:** [2-3 sentences on approach]
 **Tech Stack:** [key technologies]
 **Branch:** `feature/<feature-name>`
@@ -48,22 +48,14 @@ Save to: `docs/plans/YYYY-MM-DD-<feature>-plan.md`
 - Modify: `exact/path/to/existing.ts` (lines 123-145)
 - Test: `tests/exact/path/to/test.ts`
 
-**Step 1: Write the failing test**
-[exact test code]
+**What to build:**
+[exact implementation details — code, logic, interfaces]
 
-**Step 2: Run test to verify it fails**
-Run: `[exact command]`
-Expected: FAIL with "[expected message]"
+**What to test:**
+[exact test cases — inputs, expected outputs, edge cases]
 
-**Step 3: Write minimal implementation**
-[exact implementation code]
-
-**Step 4: Run all verifications**
-Run: `[test] && [typecheck] && [lint]`
-Expected: All pass
-
-**Step 5: Commit**
-`git add [specific files] && git commit -m "feat: [message]"`
+**Acceptance criteria:**
+[how to verify this task is done]
 
 ---
 
@@ -81,16 +73,6 @@ Each step within a task = one action:
 - "Implement minimal code" — one step
 - "Run verifications" — one step
 - "Commit" — one step
-
-**If a task has more than 5 steps, split it into multiple tasks.**
-
-## Splitting Rules
-
-| Requirement Size | Action                                                     |
-| ---------------- | ---------------------------------------------------------- |
-| 1-8 tasks        | Single plan document                                       |
-| 9+ tasks         | Split into multiple plans: `-plan-1.md`, `-plan-2.md`, ... |
-| Each plan        | 3-8 tasks, executed in order                               |
 
 ## Process
 
@@ -123,9 +105,7 @@ Follow the plan document format above. For every task:
 
 - **Exact file paths** — no "somewhere in src/"
 - **Complete code** — no "add appropriate validation"
-- **Exact commands** — no "run the tests"
-- **Expected output** — no "should pass"
-- **TDD order** — red, green, verify, commit
+- **Clear acceptance criteria** — no "should work"
 
 ### Step 5: Review
 

@@ -24,10 +24,7 @@ Read the plan first. Do not start coding without user confirmation. Do not merge
 1. Read the plan document, extract all tasks
 2. Parse plan header for branch name, test/typecheck/lint commands
 3. Capture BASE_SHA for later review: `BASE_SHA=$(git rev-parse HEAD)`
-4. Create feature branch:
-   ```bash
-   git checkout -b feature/<plan-name>
-   ```
+4. Create feature branch: `git checkout -b feature/<plan-name>`
 5. Create TodoList with all tasks using `TaskCreate`
 
 ### Step 2: Execute Tasks Sequentially
