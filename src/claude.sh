@@ -6,6 +6,7 @@ claude plugin install typescript-lsp
 # Install MCP servers
 claude mcp add codex -s user codex mcp-server
 claude mcp add context7 -s user -t http https://mcp.context7.com/mcp
+claude mcp add grep -s user -t http https://mcp.grep.app
 
 # Symlink configuration files
 mkdir -p ~/.claude
