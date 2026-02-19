@@ -26,8 +26,7 @@ Do not merge without vibe-review approval.
    - If on feature branch with plan commit → proceed
    - If on main → check out the feature branch from plan
    - If no feature branch exists → ask user where the plan is
-4. Capture BASE_SHA: `BASE_SHA=$(git rev-parse HEAD)`
-5. Create TodoList with all tasks using `TaskCreate`
+4. Create TodoList with all tasks using `TaskCreate`
 
 ### Step 2: Execute Tasks Sequentially
 
@@ -73,7 +72,7 @@ For each task, in order:
 
 After all tasks complete:
 
-1. Invoke vibe-review skill (code review mode) with BASE_SHA, HEAD_SHA, plan path. Gets verdict + threadId.
+1. Invoke vibe-review skill (code review mode) with plan path. Gets verdict + threadId.
 2. Process results:
    - **APPROVED** → proceed to Step 4
    - **NEEDS CHANGES** → dispatch new vibe-implementer with review issues as task,
