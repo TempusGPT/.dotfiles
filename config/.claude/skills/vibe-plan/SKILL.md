@@ -114,23 +114,44 @@ Follow the Plan Document Format above. For every task:
 - **Complete code** — no "add appropriate validation"
 - **Clear acceptance criteria** — no "should work"
 
-### Step 5: Review
+### Step 5: Review and User Approval
 
 1. Invoke vibe-review skill (plan review mode) — call Codex, get verdict + threadId
 2. If NEEDS CHANGES: fix issues, re-review via codex-reply with same threadId
 3. Repeat until APPROVED
-4. Present plan to user for final approval
-5. If user requests changes: apply changes, re-review via codex-reply
+4. Present options to user via `AskUserQuestion`:
 
-### Step 6: Create Feature Branch and Commit
+   ```
+   Plan review approved. How to proceed?
+
+   1. Commit — create feature branch and commit the plan
+   2. Keep — save plan file as-is without branching or committing
+   3. Discard — delete the plan file
+   ```
+
+5. If user requests changes instead of choosing an option:
+   - Apply the requested changes to the plan
+   - Re-review via codex-reply with same threadId
+   - When APPROVED again, present options again (loop back to step 4)
+
+### Step 6: Execute Choice
+
+**Option 1: Commit**
 
 1. Create feature branch: `git checkout -b feature/<feature-name>`
 2. Commit plan: `git add docs/plans/... && git commit -m "docs: add <feature> implementation plan"`
 3. Verify: `git log -1` shows the plan commit on the feature branch
+4. Transition: "Plan committed on `feature/<feature-name>`. Invoke vibe-code to start implementation?"
 
-### Step 7: Handoff
+**Option 2: Keep**
 
-Transition: "Plan approved and committed on `feature/<feature-name>`. Invoke vibe-code to start implementation?"
+Report: "Plan saved at `docs/plans/[file].md`. No branch or commit created. Invoke vibe-plan again when ready to commit."
+
+**Option 3: Discard**
+
+Require user to confirm "discard", then:
+1. Delete the plan file
+2. Report: "Plan discarded."
 
 ## Red Flags
 
