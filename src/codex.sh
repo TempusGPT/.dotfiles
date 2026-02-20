@@ -1,3 +1,6 @@
+# Create necessary directory
+mkdir -p ~/.codex
+
 # Create configuration file
 cat > ~/.codex/config.toml << 'EOF'
 model = "gpt-5.3-codex"
