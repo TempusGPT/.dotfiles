@@ -148,9 +148,7 @@ sandbox: "read-only"
 **NEEDS CHANGES:**
 
 - Categorize issues: Critical / Important / Minor
-- Critical issues must be fixed before proceeding
-- Important issues should be fixed before proceeding
-- Minor issues are at the caller's discretion
+- Present the categorized issues to the user
 
 ## Re-Review After Changes
 

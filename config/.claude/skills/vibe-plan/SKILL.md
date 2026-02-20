@@ -117,9 +117,12 @@ Follow the Plan Document Format above. For every task:
 ### Step 5: Review and User Approval
 
 1. Invoke vibe-review skill (plan review mode) — call Codex, get verdict + threadId
-2. If NEEDS CHANGES: fix issues, re-review via codex-reply with same threadId
-3. Repeat until APPROVED
-4. Present options to user via `AskUserQuestion`:
+2. If NEEDS CHANGES:
+   - Present review issues to user grouped by severity (Critical / Important / Minor)
+   - Ask user via `AskUserQuestion`: "Fix all issues", "Fix critical/important only", "Let me decide which to fix"
+   - Fix only user-confirmed issues, re-review via codex-reply with same threadId
+   - Repeat until APPROVED
+3. Present options to user via `AskUserQuestion`:
 
    ```
    Plan review approved. How to proceed?

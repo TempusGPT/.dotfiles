@@ -75,8 +75,11 @@ After all tasks complete:
 1. Invoke vibe-review skill (code review mode) with plan path. Gets verdict + threadId.
 2. Process results:
    - **APPROVED** → proceed to Step 4
-   - **NEEDS CHANGES** → dispatch new vibe-implementer with review issues as task,
-     then re-review via codex-reply with same threadId. Repeat until APPROVED.
+   - **NEEDS CHANGES**:
+     1. Present review issues to user grouped by severity (Critical / Important / Minor)
+     2. Ask user via `AskUserQuestion`: "Fix all issues", "Fix critical/important only", "Let me decide which to fix"
+     3. Dispatch new vibe-implementer with user-confirmed issues as task
+     4. Re-review via codex-reply with same threadId. Repeat until APPROVED.
 
 When NEEDS CHANGES, dispatch a new vibe-implementer:
 
