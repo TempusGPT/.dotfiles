@@ -9,5 +9,5 @@ approval_policy = "never"
 EOF
 
 # Install MCP servers
-codex mcp add context7 -- https://mcp.context7.com/mcp
-codex mcp add grep -- https://mcp.grep.app
+codex mcp add context7 --url https://mcp.context7.com/mcp
+codex mcp add grep --url https://mcp.grep.app
