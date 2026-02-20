@@ -3,6 +3,7 @@
 set -e
 cd "$(dirname $0)"
 
+source src/macos.sh
 source src/homebrew.sh
 source src/git.sh
 source src/zsh.sh
