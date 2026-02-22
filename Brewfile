@@ -16,5 +16,6 @@ cask "font-d2coding"
 cask "font-hack"
 cask "jordanbaird-ice"
 cask "karabiner-elements"
+cask "orbstack"
 cask "zed"
 mas "1Password for Safari", id: 1569813296
