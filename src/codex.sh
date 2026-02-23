@@ -5,7 +5,11 @@ mkdir -p ~/.codex
 cat > ~/.codex/config.toml << 'EOF'
 model = "gpt-5.3-codex"
 model_reasoning_effort = "high"
-approval_policy = "never"
+personality = "pragmatic"
+
+[features]
+multi_agent = true
+prevent_idle_sleep = true
 EOF
 
 # Install MCP servers
