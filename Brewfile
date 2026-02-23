@@ -1,6 +1,7 @@
 brew "fnm"
 brew "gh"
 brew "mas"
+brew "mkcert"
 brew "pnpm"
 brew "rustup"
 brew "terminal-notifier"

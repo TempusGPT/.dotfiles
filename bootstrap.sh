@@ -8,6 +8,7 @@ source src/homebrew.sh
 source src/git.sh
 source src/zsh.sh
 source src/node.sh
+source src/mkcert.sh
 source src/karabiner.sh
 source src/claude.sh
 source src/codex.sh
