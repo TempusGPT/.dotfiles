@@ -19,3 +19,6 @@ codex mcp add grep --url https://mcp.grep.app
 
 # Install agent skills
 npx skills add https://github.com/mattpocock/skills -y -g -s tdd -a codex
+
+# Symlink configuration files
+ln -snf ~/.dotfiles/config/.codex/AGENTS.md ~/.codex/AGENTS.md
