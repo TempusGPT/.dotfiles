@@ -1,6 +1,9 @@
 # Create necessary directory
 mkdir -p ~/.codex
 
+# Symlink configuration files
+ln -snf ~/.dotfiles/config/.codex/AGENTS.md ~/.codex/AGENTS.md
+
 # Create configuration file
 cat > ~/.codex/config.toml << 'EOF'
 model = "gpt-5.3-codex"
@@ -16,9 +19,3 @@ EOF
 # Install MCP servers
 codex mcp add context7 --url https://mcp.context7.com/mcp
 codex mcp add grep --url https://mcp.grep.app
-
-# Install agent skills
-npx skills add https://github.com/mattpocock/skills -y -g -s tdd -a codex
-
-# Symlink configuration files
-ln -snf ~/.dotfiles/config/.codex/AGENTS.md ~/.codex/AGENTS.md
