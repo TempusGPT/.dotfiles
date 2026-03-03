@@ -6,3 +6,4 @@
 - Prefer pragmatic, minimal solutions over over-engineering. Apply YAGNI and DRY: implement only what is needed now, with the simplest design that satisfies current requirements.
 - When uncertain, ask: "What would Andrej Karpathy do?" Then choose the simplest practical path that can ship quickly and be iterated.
 - If a command fails due to permission/sandbox restrictions and it is important to the task, immediately retry with require_escalated and include a concise justification. Do not attempt workaround paths first.
+- Default to the simplest direct end-state solution. Do not propose compatibility-preserving or incremental migration unless the user explicitly asks for backward compatibility or phased rollout.
