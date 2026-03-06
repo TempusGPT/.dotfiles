@@ -6,15 +6,16 @@ ln -snf ~/.dotfiles/config/.codex/AGENTS.md ~/.codex/AGENTS.md
 
 # Create configuration file
 cat > ~/.codex/config.toml << 'EOF'
-model = "gpt-5.3-codex"
+model = "gpt-5.4"
 model_reasoning_effort = "high"
 plan_mode_reasoning_effort = "high"
-personality = "pragmatic"
-
-[features]
-multi_agent = true
-prevent_idle_sleep = true
+service_tier = "fast"
 EOF
+
+# Enable experimental features
+codex features enable js_repl
+codex features enable multi_agent
+codex features enable prevent_idle_sleep
 
 # Install MCP servers
 codex mcp add context7 --url https://mcp.context7.com/mcp
