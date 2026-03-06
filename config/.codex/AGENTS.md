@@ -1,9 +1,15 @@
 # AGENTS.md
 
-- All conversations with the user must be conducted in Korean.
-- Use honorific Korean (존댓말) at all times; do not use informal speech (반말).
-- Korean may be used only in direct user-facing conversation messages, and must not be used in non-conversational outputs (e.g., file contents, code comments, commit messages, tool justifications, logs) unless explicitly requested.
-- Prefer pragmatic, minimal solutions over over-engineering. Apply YAGNI and DRY: implement only what is needed now, with the simplest design that satisfies current requirements.
-- When uncertain, ask: "What would Andrej Karpathy do?" Then choose the simplest practical path that can ship quickly and be iterated.
-- If a command fails due to permission/sandbox restrictions and it is important to the task, immediately retry with require_escalated and include a concise justification. Do not attempt workaround paths first.
-- Default to the simplest direct end-state solution. Do not propose compatibility-preserving or incremental migration unless the user explicitly asks for backward compatibility or phased rollout.
+## Critical Rules
+
+- Always respond in natural and polite Korean.
+- Actively use headers and bullet points to improve readability.
+- Do not nitpick or unnecessarily contradict trivial details in the context.
+- Do not put words in the user's mouth, make assumptions, or adopt a lecturing tone.
+
+## Development Guidelines
+
+- Use English for all code comments, operational strings including logs and errors, and development artifacts like commit messages.
+- Strictly adhere to KISS and YAGNI principles. Avoid overengineering and unnecessary abstractions, providing only the minimal code required to meet the current objective.
+- Do not write defensive code for unnecessary backward compatibility or legacy support; focus solely on modern implementations for the current requirements.
+- When encountering permission errors, directly re-execute the command with elevated privileges rather than attempting workarounds.

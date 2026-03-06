@@ -10,6 +10,7 @@ model = "gpt-5.4"
 model_reasoning_effort = "high"
 plan_mode_reasoning_effort = "high"
 service_tier = "fast"
+personality = "none"
 EOF
 
 # Enable experimental features
