@@ -13,3 +13,8 @@
 - Strictly adhere to KISS and YAGNI principles. Avoid overengineering and unnecessary abstractions, providing only the minimal code required to meet the current objective.
 - Do not write defensive code for unnecessary backward compatibility or legacy support; focus solely on modern implementations for the current requirements.
 - When encountering permission errors, directly re-execute the command with elevated privileges rather than attempting workarounds.
+
+## Tooling Guidelines
+
+- Strictly execute the `tdd` skill to enforce a proper Test-Driven Development workflow instead of writing ad-hoc tests manually.
+- Rely exclusively on the `context7` MCP for all research and context gathering rather than depending on assumptions or pre-trained knowledge.
