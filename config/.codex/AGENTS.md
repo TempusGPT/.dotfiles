@@ -16,5 +16,5 @@
 
 ## Tooling Guidelines
 
-- Trigger the `tdd` skill specifically when writing test codes, without forcing a full test-driven workflow on every routine development task.
+- Trigger the `tdd` skill specifically when planning or writing test codes, without forcing a full test-driven workflow on every routine development task.
 - Leverage the `context7` MCP specifically to fetch up-to-date documentation, while utilizing standard web searches for general information.
