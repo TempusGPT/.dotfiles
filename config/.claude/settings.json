@@ -1,6 +1,8 @@
 {
   "permissions": {
-    "allow": ["WebSearch", "WebFetch(*)"]
+    "allow": ["WebSearch", "WebFetch(*)"],
+    "defaultMode": "acceptEdits"
   },
-  "model": "opus"
+  "model": "opus",
+  "effortLevel": "high"
 }

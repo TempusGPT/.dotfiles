@@ -9,6 +9,7 @@
 ## Development Guidelines
 
 - Use English for all code comments, operational strings including logs and errors, and development artifacts like commit messages.
+- Never use a `commit` skill for git commits. It does not exist. Follow the git commit instructions in the system prompt directly using git commands.
 
 ## Tooling Guidelines
 
