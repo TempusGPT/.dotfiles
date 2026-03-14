@@ -1,18 +1,18 @@
 #!/bin/bash
 
-set -e
-cd "$(dirname $0)"
+set -euo pipefail
+cd "$(dirname "$0")"
 
-source src/macos.sh
-source src/homebrew.sh
-source src/git.sh
-source src/zsh.sh
-source src/node.sh
-source src/mkcert.sh
-source src/karabiner.sh
-source src/claude.sh
-source src/codex.sh
-source src/zed.sh
+source macos/setup.sh
+source homebrew/setup.sh
+source git/setup.sh
+source zsh/setup.sh
+source node/setup.sh
+source mkcert/setup.sh
+source karabiner/setup.sh
+source claude/setup.sh
+source codex/setup.sh
+source zed/setup.sh
 
 echo ""
 echo "Setup completed successfully!"

@@ -5,4 +5,4 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install packages from Brewfile
-brew bundle
+brew bundle --file=homebrew/Brewfile
