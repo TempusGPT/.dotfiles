@@ -28,7 +28,3 @@ defaults write com.apple.dock mru-spaces -bool false
 
 # Miscellaneous preferences
 defaults write com.apple.LaunchServices LSQuarantine -bool false
-
-# Apply preferences
-killall Dock
-killall Finder
