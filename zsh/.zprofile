@@ -1,5 +1,5 @@
-# Homebrew
+# homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# OrbStack
+# orbstack
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :

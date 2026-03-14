@@ -1,22 +1,18 @@
-# Fast Node Manager
+# fnm
 eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
 
-# Rustup & Cargo
-export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# Starship
+# starship
 eval "$(starship init zsh)"
 
-# Plugins
+# plugins
 source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-# Aliases
+# aliases
 alias ls="ls --color=auto"
 alias la="ls -lAh"
 alias ll="ls -lh"
 
-# Fixes
+# fixes
 preexec() { echo }
 export LESS="-R"
