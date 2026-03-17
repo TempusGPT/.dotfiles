@@ -17,7 +17,6 @@
 ## Architecture Philosophy
 
 - Merge shallow, tightly-coupled modules into deep modules — small interface hiding complex internals. A module whose interface is as complex as its implementation is pure overhead.
-- Prefer deep modules (small interface, complex internals) over shallow modules (large interface, trivial pass-through logic).
 - Use friction as the signal for refactoring candidates. When understanding one concept requires bouncing between many files, or modules share the same types and call patterns, that coupling is the problem to solve.
 - Do not extract pure functions solely for testability. Real bugs hide in the seams where those functions are called, not inside the functions themselves. Prefer deepening modules and testing at the boundary.
 - Design interfaces by competing multiple candidates under different constraints (minimal surface, maximum flexibility, common-caller optimization, ports & adapters), then recommend the strongest with rationale.
