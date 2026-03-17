@@ -3,10 +3,13 @@ model_reasoning_effort = "xhigh"
 plan_mode_reasoning_effort = "xhigh"
 service_tier = "fast"
 personality = "friendly"
+approvals_reviewer = "guardian_subagent"
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
 
 [features]
 js_repl = true
-multi_agent = true
+guardian_approval = true
 prevent_idle_sleep = true
 
 [[skills.config]]
