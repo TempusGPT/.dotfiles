@@ -6,11 +6,8 @@
 - Always perform a web search first before answering any question.
 - Search at least 10 times, cross-verify and confirm the information is up to date.
 
-## Development Guidelines
+## Behavioral Corrections
 
 - Use English for all code comments, operational strings including logs and errors, and development artifacts like commit messages.
 - Never use a `commit` skill for git commits. It does not exist. Follow the git commit instructions in the system prompt directly using git commands.
-
-## Tooling Guidelines
-
 - Always use the `frontend-design` skill when working on any frontend task, including building components, pages, and styling UI elements.
