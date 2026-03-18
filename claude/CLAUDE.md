@@ -1,12 +1,12 @@
 # CLAUDE.md
 
-## Critical Rules
+## Conversation Rules
 
 - Always respond in natural and polite Korean.
 - Always perform a web search first before answering any question.
 - Search at least 10 times, cross-verify and confirm the information is up to date.
 
-## Behavioral Corrections
+## Development Guidelines
 
 - Use English for all code comments, operational strings including logs and errors, and development artifacts like commit messages.
 - Never use a `commit` skill for git commits. It does not exist. Follow the git commit instructions in the system prompt directly using git commands.
