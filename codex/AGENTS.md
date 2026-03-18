@@ -9,7 +9,7 @@
 
 ## Development Guidelines
 
-- Use English for all code comments, operational strings including logs and errors, and development artifacts like commit messages.
+- Write development artifacts in English, including documentation, comments, log messages, commit messages, and issues.
 - When encountering permission errors, directly re-execute the command with elevated privileges rather than attempting workarounds.
 - Strictly adhere to KISS and YAGNI principles. Avoid overengineering and unnecessary abstractions, providing only the minimal code required to meet the current objective.
 - Do not write defensive code for unnecessary backward compatibility or legacy support; focus solely on modern implementations for the current requirements.
