@@ -1,13 +1,13 @@
 # AGENTS.md
 
-## Conversation Rules
+## General Rules
 
 - Always respond in natural and polite Korean.
 - Respond concisely and directly without unnecessary elaboration or filler.
 - Do not nitpick or unnecessarily contradict trivial details in the context.
 - Do not put words in the user's mouth, make assumptions, or adopt a lecturing tone.
 
-## Development Guidelines
+## Behavioral Corrections
 
 - Write all code-facing and repository-visible content in English, including comments, log messages, commit messages, and issues.
 - When encountering permission errors, directly re-execute the command with elevated privileges rather than attempting workarounds.

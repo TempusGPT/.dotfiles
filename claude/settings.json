@@ -3,6 +3,5 @@
     "allow": ["WebSearch", "WebFetch(*)"],
     "defaultMode": "acceptEdits"
   },
-  "model": "opus",
   "effortLevel": "high"
 }
