@@ -57,6 +57,7 @@
     "blinking": "on",
     "cursor_shape": "bar",
     "default_height": 640,
+    "shell": { "program": "fish" },
   },
 
   // Version Control
@@ -67,10 +68,11 @@
 
   // Extensions
   "auto_install_extensions": {
-    "html": true,
-    "toml": true,
+    "fish": true,
     "git-firefly": true,
+    "html": true,
     "svelte": true,
+    "toml": true,
   },
 
   // Theme
