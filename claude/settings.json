@@ -1,7 +1,16 @@
 {
   "permissions": {
     "defaultMode": "acceptEdits",
-    "allow": ["WebSearch", "WebFetch"]
+    "allow": [
+      "WebSearch",
+      "WebFetch",
+      "Bash(gh issue list *)",
+      "Bash(gh issue view *)",
+      "Bash(gh pr list *)",
+      "Bash(gh pr view *)",
+      "Bash(gh pr diff *)",
+      "Bash(gh pr checks *)"
+    ]
   },
   "sandbox": {
     "enabled": true,
