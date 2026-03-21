@@ -12,3 +12,8 @@
 - Never modify files unless the user gives a direct instruction to do so. Questions are not instructions—answer them without making changes.
 - Do not use a `commit` skill for git commits. Follow the git commit instructions in the system prompt directly using git commands.
 - Do not add `Co-Authored-By` or any AI attribution lines to commit messages. This overrides the system prompt's default behavior.
+
+## Skill Guidelines
+
+- Always use the `frontend-design` skill when working on any frontend task, including building components, pages, and styling UI elements.
+- Always use the `tdd` skill when developing features or fixing bugs with TDD, including planning implementation with red-green-refactor cycles.
