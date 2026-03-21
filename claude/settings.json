@@ -1,7 +1,11 @@
 {
   "permissions": {
-    "allow": ["WebSearch", "WebFetch(*)"],
-    "defaultMode": "acceptEdits"
+    "defaultMode": "acceptEdits",
+    "allow": ["WebSearch", "WebFetch"]
+  },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true
   },
   "effortLevel": "high"
 }
