@@ -1,6 +1,5 @@
 {
   "permissions": {
-    "defaultMode": "acceptEdits",
     "allow": [
       "WebSearch",
       "WebFetch",
@@ -10,11 +9,13 @@
       "Bash(gh pr view *)",
       "Bash(gh pr diff *)",
       "Bash(gh pr checks *)"
-    ]
+    ],
+    "defaultMode": "acceptEdits"
   },
   "sandbox": {
     "enabled": true,
     "autoAllowBashIfSandboxed": true
   },
-  "effortLevel": "high"
+  "effortLevel": "high",
+  "autoMemoryEnabled": false
 }
